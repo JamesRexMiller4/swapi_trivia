@@ -1,11 +1,21 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './App.css';
+import Landing from './components/Landing.js';
 
-function App() {
-  return (
-    <div className="App">
-    </div>
-  );
+class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      
+    }
+  }
+  render() {
+    return (
+      <div className="App">
+        <Landing />
+      </div>
+    );
+  }
 }
 
 export default App;

@@ -1,0 +1,26 @@
+@font-face {
+  font-family: 'StarWars Main';
+  src: url('../Fonts/Starjedi.ttf');
+}
+
+#landing-main {
+  background-image: url('../images/Galaxy1.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  overflow: auto;
+  padding-left: 30%;
+  padding-right: 30%;
+  padding-top: 3vh;
+  width: 100%;
+}
+
+h1 {
+  color: #EEDB00;
+  font-family: 'StarWars Main';
+  font-size: 7rem;
+  line-height: 100%;
+  margin-bottom: 7%;
+  width: 100%;
+}
