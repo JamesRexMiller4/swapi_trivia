@@ -19,7 +19,8 @@
 h1 {
   color: #EEDB00;
   font-family: 'StarWars Main';
-  font-size: 8rem;
+  font-size: 7rem;
+  line-height: 100%;
   margin-bottom: 7%;
   width: 100%;
 }
