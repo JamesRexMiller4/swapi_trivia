@@ -80,3 +80,13 @@ button:active {
   background-color: #EEDB00;
   color: #131319;
 }
+
+.error-p {
+  margin-top: 10px;
+  margin-bottom: -20px;
+  color: red;
+}
+
+.hidden {
+  display: none;
+}
