@@ -7,7 +7,8 @@ class Form extends Component {
     this.state = {
       name: '',
       quote: '',
-      ranking: ''
+      ranking: '',
+      className: 'hidden'
     }
   }
 
@@ -24,9 +25,14 @@ class Form extends Component {
     this.setState({ranking: 'expert'}) : console.log(null)
   }
 
-  validateForm = () => {
-    
+  validateForm = event => {
+    (event.target.getAttribute('id') === 'form-submit') 
+    && this.state.name.length > 0 && this.state.quote.length > 0 
+    && this.state.ranking.length > 0 ?
+    console.log('success, render the movies component')
+    : this.setState({className: 'error-p'})
   }
+
   render() {
     return (
       <div id="form-wrapper">
@@ -56,7 +62,8 @@ class Form extends Component {
             </div>
           </div>
         </div>
-        <button id="form-submit" onClick={this.validateForm()}>Sign In</button>
+        <p className={this.state.className}>Please fill out all form fields</p>
+        <button id="form-submit" onClick={event => this.validateForm(event)}>Sign In</button>
       </div>
     )
   }
