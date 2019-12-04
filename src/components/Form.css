@@ -1,0 +1,17 @@
+@font-face {
+  font-family: 'Formal Main';
+  src: url('../Fonts/EPISODE1.TTF');
+}
+
+div {
+  background-color: #131319;
+  border: 2px solid #EFF6EE;
+  display: block;
+  height: 300px;
+}
+
+span {
+  color: #EEDB00;
+  display: block;
+  font-family: 'Formal Main';
+}
