@@ -3,15 +3,75 @@
   src: url('../Fonts/EPISODE1.TTF');
 }
 
-div {
-  background-color: #131319;
+#form-wrapper {
+  background-color: rgba(07, 07, 10, 0.7);
   border: 2px solid #EFF6EE;
   display: block;
-  height: 300px;
+  height: 500px;
 }
 
 span {
   color: #EEDB00;
   display: block;
+  font-size: 1.6rem;
   font-family: 'Formal Main';
+  text-decoration: underline;
+  word-spacing: 0.4rem;
+}
+
+.input-wrapper {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 25px;
+  text-align: left;
+  width: 50%;
+}
+
+label {
+  color: white;
+  display: block;
+  margin-bottom: 5px;
+}
+
+input {
+  height: 35px;
+  width: 100%;
+}
+
+.radio-input {
+  width: 20px;
+}
+
+#radio-wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+  padding-left: 10%;
+  padding-right: 10%;
+  text-align: center;
+}
+
+#button-main-label {
+  margin-top: 35px;
+}
+
+.radio-label {
+  font-size: 0.8rem;
+  margin-top: 0;
+}
+
+button {
+  background-color: #001F54;
+  color: white;
+  font-size: 1.2rem;
+  height: 35px;
+  margin-top: 50px;
+  outline: none;
+  width: 35%;
+}
+
+button:active {
+  background-color: #EEDB00;
+  color: #131319;
 }

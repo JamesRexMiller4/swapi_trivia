@@ -10,9 +10,9 @@
   background-size: cover;
   height: 100vh;
   overflow: auto;
-  padding-left: 25%;
-  padding-right: 25%;
-  padding-top: 10vh;
+  padding-left: 30%;
+  padding-right: 30%;
+  padding-top: 3vh;
   width: 100%;
 }
 
@@ -20,5 +20,6 @@ h1 {
   color: #EEDB00;
   font-family: 'StarWars Main';
   font-size: 8rem;
+  margin-bottom: 7%;
   width: 100%;
 }
