@@ -3,6 +3,8 @@
   src: url('../Fonts/EPISODE1.TTF');
 }
 
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web&display=swap');
+
 #form-wrapper {
   background-color: rgba(07, 07, 10, 0.7);
   border: 2px solid #EFF6EE;
@@ -31,10 +33,12 @@ span {
 label {
   color: white;
   display: block;
+  font-family: 'Titillium Web', sans-serif;
   margin-bottom: 5px;
 }
 
 input {
+  font-family: 'Titillium Web', sans-serif;
   height: 35px;
   width: 100%;
 }
@@ -64,6 +68,7 @@ input {
 button {
   background-color: #001F54;
   color: white;
+  font-family: 'Titillium Web', sans-serif;
   font-size: 1.2rem;
   height: 35px;
   margin-top: 50px;
