@@ -27,15 +27,15 @@ class Form extends Component {
           <div id="radio-wrapper">
             <div className="radio-wrapper-sm">
               <input className="radio-input" type="radio" name="Novice" id="novice-input"></input>
-              <label className="radio-label" for="novice-input">Novice</label>
+              <label className="radio-label" htmlFor="novice-input">Novice</label>
             </div>
             <div className="radio-wrapper-sm">
               <input className="radio-input" type="radio" name="Novice" id="intermediate-input"></input>
-              <label className="radio-label" for="intermediate-input">Intermediate</label>
+              <label className="radio-label" htmlFor="intermediate-input">Intermediate</label>
             </div>
             <div className="radio-wrapper-sm">
               <input className="radio-input" type="radio" name="Novice" id="expert-input"></input>
-              <label className="radio-label" for="expert-input">Expert</label>
+              <label className="radio-label" htmlFor="expert-input">Expert</label>
             </div>
           </div>
         </div>
