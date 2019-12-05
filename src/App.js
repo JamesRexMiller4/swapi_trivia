@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
-import Container from './components/Container.js';
-import Header from './components/Header.js';
-import Landing from './components/Landing.js';
-import Loader from './components/Loader.js'
+import Container from './components/Container/Container.js';
+import Header from './components/Header/Header.js';
+import Landing from './components/Landing/Landing.js';
+import Loader from './components/Loader/Loader.js'
 
 class App extends Component {
   constructor() {

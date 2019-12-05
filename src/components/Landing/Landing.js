@@ -1,6 +1,6 @@
 import React from 'react';
 import './Landing.scss';
-import Form from './Form.js';
+import Form from '../Form/Form.js';
 
 const Landing = (props) => {
   return (
