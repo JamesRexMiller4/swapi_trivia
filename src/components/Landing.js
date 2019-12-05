@@ -5,7 +5,7 @@ import Form from './Form.js';
 const Landing = (props) => {
   return (
     <div id="landing-main">
-      <h1>Swapi<br/>Wars</h1>
+      <h1>Swapi<br/>WarS</h1>
       <Form updateLogin={props.updateLogin}/>
     </div>
   );
