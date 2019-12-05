@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Landing from './components/Landing.js';
+import Loader from './components/Loader.js'
 
 class App extends Component {
   constructor() {
@@ -13,6 +14,7 @@ class App extends Component {
     return (
       <div className="App">
         <Landing updateLogin={this.updateLogin}/>
+        {!this.state && <Loader />}
       </div>
     );
   }

@@ -1,0 +1,48 @@
+.loader-section {
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+}
+
+.loader-h2 {
+  width: inherit;
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 30px;
+  color: #0befff;
+}
+
+.loader-div-wave {
+  display: inline-block;
+	margin-top:50vh;
+	text-align:center;
+	width:100px;
+	height:100px;
+	margin-left: auto;
+  margin-right: auto;
+}
+.loader-div-wave .dot {
+  display:inline-block;
+  width:6px;
+  height:6px;
+  border-radius:50%;
+  margin-right:3px;
+  background:#0befff;
+  animation: wave 1.3s linear infinite;
+}
+
+.loader-div-wave .dot:nth-child(2) {
+  animation-delay: -1.1s;
+}
+
+.loader-div-wave .dot:nth-child(3) {
+  animation-delay: -0.9s;
+}
+
+@keyframes wave {
+  0%, 60%, 100% {
+    transform: initial;
+  }
+  30% {
+    transform: translateY(-15px);
+  }
+}
