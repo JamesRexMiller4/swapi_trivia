@@ -1,7 +1,7 @@
-@import 'variables.scss';
+@import '../variables.scss';
 @font-face {
   font-family: 'Formal Main';
-  src: url('../Fonts/EPISODE1.TTF');
+  src: url('../../Fonts/EPISODE1.TTF');
 }
 
 .header {
