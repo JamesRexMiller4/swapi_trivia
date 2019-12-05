@@ -8,18 +8,27 @@ class App extends Component {
     super();
     this.state = {
       isLoading: false
+      user : {
+        name: Jimbo,
+        quote: "There's a rattlesnake in my boot",
+        ranking: "Expert"
+      }
     }
   }
   render = () => {
     return (
       <div className="App">
-        <Landing updateLogin={this.updateLogin}/>
+        {/* <Landing updateLogin={this.updateLogin}/> */}
         {!this.state && <Loader />}
+        <Header 
+          name={this.state.user.name} 
+          quote={this.state.user.quote}
+          ranking={this.state.user.ranking}/> 
       </div>
     );
   }
   updateLogin = ({ name, quote, ranking }) => {
-    this.setState({ user: { name, quote, ranking } });
+    this.setState({ user: { name, quote, ranking }});
   }
 }
 
