@@ -7,16 +7,19 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-     
+
     }
   }
-  render() {
+  render = () => {
     return (
       <div className="App">
-        <Landing />
+        <Landing updateLogin={this.updateLogin}/>
         {!this.state && <Loader />}
       </div>
     );
+  }
+  updateLogin = ({ name, quote, ranking }) => {
+    this.setState({ user: { name, quote, ranking } });
   }
 }
 

@@ -39,7 +39,9 @@ label {
 
 input {
   font-family: 'Titillium Web', sans-serif;
+  font-size: 1rem;
   height: 35px;
+  padding: 5px;
   width: 100%;
 }
 
@@ -61,7 +63,7 @@ input {
 }
 
 .radio-label {
-  font-size: 0.8rem;
+  font-size: 1rem;
   margin-top: 0;
 }
 
@@ -82,8 +84,9 @@ button:active {
 }
 
 .error-p {
+  font-family: 'Titillium Web', sans-serif;
   margin-top: 10px;
-  margin-bottom: -20px;
+  margin-bottom: -35px;
   color: red;
 }
 
