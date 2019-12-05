@@ -1,7 +1,4 @@
-@font-face {
-  font-family: 'StarWars Main';
-  src: url('../Fonts/Starjedi.ttf');
-}
+@import 'variables.scss';
 
 #landing-main {
   background-image: url('../images/Galaxy1.jpg');
@@ -18,7 +15,7 @@
 
 h1 {
   color: #EEDB00;
-  font-family: 'StarWars Main';
+  font-family: $large-text-font;
   font-size: 7rem;
   line-height: 100%;
   margin-bottom: 7%;

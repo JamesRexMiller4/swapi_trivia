@@ -1,5 +1,5 @@
 import React from 'react';
-import './Loader.css';
+import './Loader.scss';
 
 
 const Loader = () =>  {
@@ -7,9 +7,9 @@ const Loader = () =>  {
     <section className='loader-section'>
       <h2 className='loader-h2'>A long time ago in a galaxy far far away
       <div className="loader-div-wave">
-        <span class="dot"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
+        <span className="dot"></span>
+        <span className="dot"></span>
+        <span className="dot"></span>
       </div></h2>
     </section>
   )
