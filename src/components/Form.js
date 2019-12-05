@@ -15,21 +15,21 @@ class Form extends Component {
   handleChange = event => {
     event.target.getAttribute('id') === 'name-input' ?
     this.setState({name: event.target.value})
-    : event.target.getAttribute('id') === 'quote-input' ? 
+    : event.target.getAttribute('id') === 'quote-input' ?
     this.setState({quote: event.target.value})
-    : event.target.getAttribute('id') === 'novice-input' ? 
+    : event.target.getAttribute('id') === 'novice-input' ?
     this.setState({ranking: 'novice'})
-    : event.target.getAttribute('id') === 'intermediate-input' ? 
+    : event.target.getAttribute('id') === 'intermediate-input' ?
     this.setState({ranking: 'intermediate'})
     : event.target.getAttribute('id') === 'expert-input' ?
     this.setState({ranking: 'expert'}) : console.log(null)
   }
 
   validateForm = event => {
-    (event.target.getAttribute('id') === 'form-submit') 
-    && this.state.name.length > 0 && this.state.quote.length > 0 
+    (event.target.getAttribute('id') === 'form-submit')
+    && this.state.name.length > 0 && this.state.quote.length > 0
     && this.state.ranking.length > 0 ?
-    console.log('success, render the movies component')
+    this.props.updateLogin(this.state)
     : this.setState({className: 'error-p'})
   }
 
