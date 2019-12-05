@@ -1,0 +1,21 @@
+@font-face {
+  font-family: 'StarWars Main';
+  src: url('../Fonts/Starjedi.ttf');
+}
+
+@font-face {
+  font-family: 'Formal Main';
+  src: url('../Fonts/EPISODE1.TTF');
+}
+
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web&display=swap');
+
+$main-background-color: #131319;
+$main-header-color: #EEDB00;
+$primary-accent-color: #EFF6EE;
+$secondary-accent-color: #2274A5;
+$secondary-background-color: #001F54;
+
+$large-text-font: 'StarWars Main';
+$medium-text-font: 'Formal Main';
+$small-text-font: 'Titillium Web', sans-serif;

@@ -1,12 +1,5 @@
 @import 'variables.scss';
 
-@font-face {
-  font-family: 'Formal Main';
-  src: url('../Fonts/EPISODE1.TTF');
-}
-
-@import url('https://fonts.googleapis.com/css?family=Titillium+Web&display=swap');
-
 #form-wrapper {
   background-color: rgba(07, 07, 10, 0.7);
   border: 2px solid #EFF6EE;
@@ -18,7 +11,7 @@ span {
   color: #EEDB00;
   display: block;
   font-size: 1.6rem;
-  font-family: 'Formal Main';
+  font-family: $medium-text-font;
   text-decoration: underline;
   word-spacing: 0.4rem;
 }
@@ -35,12 +28,12 @@ span {
 label {
   color: white;
   display: block;
-  font-family: 'Titillium Web', sans-serif;
+  font-family: $small-text-font;
   margin-bottom: 5px;
 }
 
 input {
-  font-family: 'Titillium Web', sans-serif;
+  font-family: $small-text-font;
   font-size: 1rem;
   height: 35px;
   padding: 5px;
@@ -72,7 +65,7 @@ input {
 button {
   background-color: #001F54;
   color: white;
-  font-family: 'Titillium Web', sans-serif;
+  font-family: $small-text-font;
   font-size: 1.2rem;
   height: 35px;
   margin-top: 50px;
@@ -86,7 +79,7 @@ button:active {
 }
 
 .error-p {
-  font-family: 'Titillium Web', sans-serif;
+  font-family: $small-text-font;
   margin-top: 10px;
   margin-bottom: -35px;
   color: red;
