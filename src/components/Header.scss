@@ -1,0 +1,82 @@
+@import 'variables.scss';
+@font-face {
+  font-family: 'Formal Main';
+  src: url('../Fonts/EPISODE1.TTF');
+}
+
+.header {
+  background-color: $main-background-color;
+  font-size: 2rem;
+  height: 20vh;
+  width: 100%;
+
+  h1 {
+    font-size: 3rem;
+    margin-left: 40px;
+    margin-bottom: -1px;
+    text-align: left;
+    display: inline;
+  }
+
+  h2 {
+    color: $main-header-color;
+    font-family: $small-text-font;
+    font-weight: 600;
+    font-size: 2rem;
+    margin-left: 40px;
+    margin-top: 10px;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  h3.quote-h3-header {
+    color: $secondary-accent-color;
+    font-style: italic;
+  }
+
+  h3.ranking-h3-header {
+    color: $main-header-color;
+  }
+  span {
+    color: $primary-accent-color;
+    display: inline-block;
+    font-size: 1.5rem;
+    text-decoration: none;
+  }
+
+}
+
+.logo-btn-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+
+  button {
+    width: 15%;
+    margin-right: 20px;
+    font-family: $small-text-font;
+
+    &:hover {
+      background-color: $main-header-color;
+      color: $secondary-accent-color;
+      font-weight: bold;
+      border: 2px solid;
+      border-color: $secondary-accent-color;
+    }
+  }
+}
+
+.profile-wrapper-header {
+  align-items: baseline;
+  display: flex; 
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.log-out-btn {
+  width: 20%;
+}
