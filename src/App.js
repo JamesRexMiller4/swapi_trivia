@@ -13,9 +13,9 @@ class App extends Component {
       isLoading: false,
       path: '/',
       user : {
-        name: 'Jimbo',
-        quote: "There's a rattlesnake in my boot",
-        ranking: "Expert"
+        name: '',
+        quote: '',
+        ranking: ''
       }
     }
   }
@@ -68,8 +68,7 @@ class App extends Component {
         <Redirect to={this.state.path} />
         <Route exact path='/' render={() => <Landing updateLogin={this.updateLogin} />} />
         <Route exact path='/movies' render={() =>
-          moviePage}
-        />
+          moviePage} />
         <Route path='/movies/:movie_id' render={() => <Container />} />
         <Route path='/favorite' render={() => <Container />} />
       </div>
