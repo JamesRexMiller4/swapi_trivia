@@ -11,6 +11,7 @@ class App extends Component {
     super();
     this.state = {
       isLoading: false,
+      path: '/',
       user : {
         name: 'Jimbo',
         quote: "There's a rattlesnake in my boot",
@@ -43,13 +44,15 @@ class App extends Component {
 
 
   updateLogin = ({ name, quote, ranking }) => {
-    this.setState({ user: { name, quote, ranking }});
+    this.setState({ user: { name, quote, ranking },
+    path: '/movies'});
   }
 
 
   render = () => {
     return (
       <div className="App">
+        <Redirect to={this.state.path} />
         <Route exact path='/' render={() => <Landing updateLogin={this.updateLogin} />} />
         <Route path='/movies' render={() =>
         <Header
