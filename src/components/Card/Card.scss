@@ -32,6 +32,13 @@ strong {
   }
   margin-top: 10px;
 }
+
+.episode-title {
+  color: $main-header-color;
+  font: {
+    family: $medium-text-font;
+  }
+}
 // @mixin imagegrid($qty, $margin) {
 //   width: ((100% - (($qty - 1) * $margin))/ $qty);
 //   &:nth-child(n) {
