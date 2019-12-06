@@ -13,35 +13,31 @@ const Card = (props) => {
   // films is another fetch request
     return (
       <section className="section-card">
-        <div className="wrapper-card-div">
-          <ul className="card-details-ul">
-            <li><strong>Name:</strong> Luke SkyWalker</li>
-            <li><strong>Homeworld:</strong> Tattoiine</li>
-            <li><strong>Population of Tatootine:</strong> 400 million</li>
-            <li><strong>Species:</strong> Human</li>
-            <li><strong>Other Films:</strong> all seven</li>
-          </ul>
-        </div>
-      </section>
+          <div className="wrapper-card-div">
+            <ul className="card-details-ul">
+              <li>Episode {props.id}: {props.title}</li>
+              <li>Release Year: {props.date}</li>
+            </ul>
+            <button>View Characters</button>
+          </div>
+        </section>
     )
   }
 // }
 
 // For character cards
 // return (
-//   <div className="div-wrapper">
-//     <section className="section-card">
-//       <div className="wrapper-card-div">
-//         <ul className="card-details-ul">
-//           <li>Title</li>
-//           <li>Homeworld: Tattoiine</li>
-//           <li>Population of Tatootine: 400 million</li>
-//           <li>Species: Human</li>
-//           <li>Other Films: all seven</li>
-//         </ul>
-//       </div>
-//     </section>
+//   <section className="section-card">
+//   <div className="wrapper-card-div">
+//     <ul className="card-details-ul">
+//       <li><strong>Name:</strong> Luke SkyWalker</li>
+//       <li><strong>Homeworld:</strong> Tattoiine</li>
+//       <li><strong>Population of Tatootine:</strong> 400 million</li>
+//       <li><strong>Species:</strong> Human</li>
+//       <li><strong>Other Films:</strong> all seven</li>
+//     </ul>
 //   </div>
+// </section>
 // )
 
 export default Card
