@@ -32,9 +32,11 @@ class App extends Component {
         <Header 
           name={this.state.user.name} 
           quote={this.state.user.quote}
-          ranking={this.state.user.ranking}/>} />
+          ranking={this.state.user.ranking}/>} 
+        />
         <Route exact path='/movies' render={() => <Container />} />
         <Route path='/movies/:movie_id' render={() => <Container />} />
+        <Route path='/favorite' render={() => <Container />} />
       </div>
     );
   }
