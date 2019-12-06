@@ -1,7 +1,7 @@
 @import '../variables.scss';
 
 #form-wrapper {
-  background-color: rgba(07, 07, 10, 0.7);
+  background-color: $main-background-transparent;
   border: 2px solid $primary-accent-color;
   display: block;
   height: 500px;

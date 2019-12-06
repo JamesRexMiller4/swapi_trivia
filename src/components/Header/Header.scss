@@ -5,10 +5,13 @@
 }
 
 .header {
-  background-color: $main-background-color;
-  font-size: 2rem;
-  height: 20vh;
-  width: 100%;
+  background: {
+    color: $main-background-color;
+    font-size: 2rem;
+    height: 20vh;
+    position: fixed;
+    width: 100%;
+  }
 
   h1 {
     font-size: 3rem;
@@ -71,7 +74,7 @@
 
 .profile-wrapper-header {
   align-items: baseline;
-  display: flex; 
+  display: flex;
   flex-direction: row;
   justify-content: space-around;
   margin-top: 20px;

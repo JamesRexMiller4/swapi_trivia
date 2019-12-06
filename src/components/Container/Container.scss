@@ -1,9 +1,13 @@
 @import '../variables.scss';
 
 .container-section {
+  background: {
+    attachment: fixed;
+    image: url('../../images/star-wars-background.jpg');
+    repeat: no-repeat;
+    size: cover;
+  }
+  height: 100vh;
+  overflow-x: scroll;
   width: 100%;
-  height: fit-content;
-  background-image: url('../../images/star-wars-background.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
 }
