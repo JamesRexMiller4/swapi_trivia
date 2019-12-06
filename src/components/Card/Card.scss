@@ -7,13 +7,6 @@
   color: purple;
 }
 
-.div-wrapper {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-}
-
 // @mixin imagegrid($qty, $margin) {
 //   width: ((100% - (($qty - 1) * $margin))/ $qty);
 //   &:nth-child(n) {
