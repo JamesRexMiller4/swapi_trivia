@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Route, NavLink, Redirect } from 'react-router-dom';
 import './App.css';
 import Container from './components/Container/Container.js';
 import Header from './components/Header/Header.js';
@@ -17,22 +18,25 @@ class App extends Component {
       }
     }
   }
+
+  updateLogin = ({ name, quote, ranking }) => {
+    this.setState({ user: { name, quote, ranking }});
+  }
+
   render = () => {
     return (
       <div className="App">
-        {/* <Landing updateLogin={this.updateLogin}/>
-        {!this.state && <Loader />} */}
+        <Route exact path='/' render={() => !this.state ? 
+        <Loader /> : <Landing updateLogin={this.updateLogin}/>} />
+        <Route path='/movies' render={() => 
         <Header 
           name={this.state.user.name} 
           quote={this.state.user.quote}
-          ranking={this.state.user.ranking}
-          />
-        <Container />
+          ranking={this.state.user.ranking}/>} />
+        <Route exact path='/movies' render={() => <Container />} />
+        <Route path='/movies/:movie_id' render={() => <Container />} />
       </div>
     );
-  }
-  updateLogin = ({ name, quote, ranking }) => {
-    this.setState({ user: { name, quote, ranking }});
   }
 }
 
