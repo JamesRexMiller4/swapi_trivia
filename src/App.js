@@ -20,14 +20,7 @@ class App extends Component {
   render = () => {
     return (
       <div className="App">
-        {/* <Landing updateLogin={this.updateLogin}/> */}
-        {/* {!this.state && <Loader />} */}
-        <Header 
-          name={this.state.user.name} 
-          quote={this.state.user.quote}
-          ranking={this.state.user.ranking}
-          />
-        <Container />
+        <Landing updateLogin={this.updateLogin}/> 
       </div>
     );
   }

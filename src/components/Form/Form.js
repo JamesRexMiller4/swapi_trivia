@@ -23,6 +23,7 @@ class Form extends Component {
     this.setState({ranking: 'intermediate'})
     : event.target.getAttribute('id') === 'expert-input' ?
     this.setState({ranking: 'expert'}) : console.log(null)
+    setTimeout(() => {this.checkErrorStatus()}, 100)
   }
 
   validateForm = event => {
@@ -33,7 +34,13 @@ class Form extends Component {
     : this.setState({className: 'error-p'})
   }
 
+  checkErrorStatus = () => {
+    this.state.name.length > 0 && this.state.quote.length > 0 && this.state.ranking.length > 0 ?
+    this.setState({className: 'hidden'}) : console.log(null);
+  }
+
   render() {
+    console.log(this.state);
     return (
       <div id="form-wrapper">
         <span>Please sign in to continue.</span>
