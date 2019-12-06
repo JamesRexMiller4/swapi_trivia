@@ -26,6 +26,8 @@ class Form extends Component {
   }
 
   validateForm = event => {
+    event.preventDefault();
+    console.log('Hello');
     (event.target.getAttribute('id') === 'form-submit')
     && this.state.name.length > 0 && this.state.quote.length > 0
     && this.state.ranking.length > 0 ?

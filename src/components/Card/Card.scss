@@ -1,0 +1,27 @@
+.section-card {
+  width: 500px;
+  height: 200px;
+  background-color: white;
+  margin: 20px;
+  border: 10px solid;
+  color: purple;
+}
+
+.div-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+// @mixin imagegrid($qty, $margin) {
+//   width: ((100% - (($qty - 1) * $margin))/ $qty);
+//   &:nth-child(n) {
+//     margin-right: $margin;
+//     margin-bottom: $margin;
+//   }
+//   &:nth-child(#{qty}n) {
+//     margin-right: 0;
+//     margin-bottom: 0;
+//   }
+// }

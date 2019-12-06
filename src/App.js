@@ -20,8 +20,8 @@ class App extends Component {
   render = () => {
     return (
       <div className="App">
-        {/* <Landing updateLogin={this.updateLogin}/> */}
-        {/* {!this.state && <Loader />} */}
+        {/* <Landing updateLogin={this.updateLogin}/>
+        {!this.state && <Loader />} */}
         <Header 
           name={this.state.user.name} 
           quote={this.state.user.quote}
