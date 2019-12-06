@@ -42,7 +42,6 @@ class Form extends Component {
   }
 
   render() {
-    console.log(this.state);
     return (
       <div id="form-wrapper">
         <span>Please sign in to continue.</span>
