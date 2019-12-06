@@ -7,7 +7,16 @@
     repeat: no-repeat;
     size: cover;
   }
+  display: grid;
+  grid-column-gap: 70px;
+  grid-row-gap: 20px;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin: {
+    left: auto;
+    right: auto;
+  }
   height: 100vh;
   overflow-x: scroll;
+  position: relative;
   width: 100%;
 }
