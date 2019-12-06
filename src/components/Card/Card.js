@@ -15,7 +15,7 @@ const Card = (props) => {
       <section className="section-card">
           <div className="wrapper-card-div">
             <ul className="card-details-ul">
-              <li><strong className="episode-title">Episode {props.id}:</strong> {props.title}</li>
+              <li><strong className="episode-title">Episode {props.id}:</strong> {props.title.toUpperCase()}</li>
               <li><strong>Release Year:</strong> {props.date}</li>
             </ul>
             <button className="character-btn">View Characters</button>

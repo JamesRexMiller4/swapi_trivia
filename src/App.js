@@ -53,19 +53,23 @@ class App extends Component {
   }
 
   render = () => {
+    let moviePage;
+    !this.state.movies ? moviePage = <Loader /> :
+    moviePage = <>
+      <Header
+      logout={this.logout}
+      name={this.state.user.name}
+      quote={this.state.user.quote}
+      ranking={this.state.user.ranking} />
+      <Container movies={this.state.movies} />
+     </>
     return (
       <div className="App">
         <Redirect to={this.state.path} />
         <Route exact path='/' render={() => <Landing updateLogin={this.updateLogin} />} />
-        <Route path='/movies' render={() =>
-        <Header
-          logout={this.logout}
-          name={this.state.user.name}
-          quote={this.state.user.quote}
-          ranking={this.state.user.ranking}/>}
+        <Route exact path='/movies' render={() =>
+          moviePage}
         />
-        <Route exact path='/movies' render={() => !this.state.movies ?
-        <Loader /> : <Container movies={this.state.movies} />} />
         <Route path='/movies/:movie_id' render={() => <Container />} />
         <Route path='/favorite' render={() => <Container />} />
       </div>
