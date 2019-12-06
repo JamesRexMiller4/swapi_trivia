@@ -48,6 +48,9 @@ class App extends Component {
     path: '/movies'});
   }
 
+  logout = () => {
+    this.setState({path: '/'});
+  }
 
   render = () => {
     return (
@@ -56,6 +59,7 @@ class App extends Component {
         <Route exact path='/' render={() => <Landing updateLogin={this.updateLogin} />} />
         <Route path='/movies' render={() =>
         <Header
+          logout={this.logout}
           name={this.state.user.name}
           quote={this.state.user.quote}
           ranking={this.state.user.ranking}/>}
