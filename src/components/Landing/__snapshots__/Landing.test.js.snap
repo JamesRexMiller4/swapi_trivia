@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Landing should match the snapshot with all the data passed through 1`] = `
+<div
+  id="landing-main"
+>
+  <h1>
+    Swapi
+    <br />
+    WarS
+  </h1>
+  <Form />
+</div>
+`;
