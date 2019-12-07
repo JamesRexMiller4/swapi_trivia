@@ -43,7 +43,7 @@ class Form extends Component {
 
   render() {
     return (
-      <div id="form-wrapper">
+      <form id="form-wrapper">
         <span>Please sign in to continue.</span>
         <div className="input-wrapper">
           <label>Name:</label>
@@ -72,7 +72,7 @@ class Form extends Component {
         </div>
         <p className={this.state.className}>Please fill out all form fields</p>
         <button id="form-submit" onClick={event => this.validateForm(event)}>Sign In</button>
-      </div>
+      </form>
     )
   }
 }
