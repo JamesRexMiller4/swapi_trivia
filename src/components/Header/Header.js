@@ -18,7 +18,7 @@ const Header = ({name, quote, ranking, logout}) => {
   )
 }
 
-Header.PropTypes = {
+Header.propTypes = {
   name: PropTypes.string,
   quote: PropTypes.string,
   ranking: PropTypes.string,
