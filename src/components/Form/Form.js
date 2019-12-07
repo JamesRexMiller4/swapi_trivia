@@ -43,7 +43,7 @@ class Form extends Component {
 
   render() {
     return (
-      <form id="form-wrapper">
+      <form id="form-wrapper" autoComplete="off">
         <span>Please sign in to continue.</span>
         <div className="input-wrapper">
           <label>Name:</label>
