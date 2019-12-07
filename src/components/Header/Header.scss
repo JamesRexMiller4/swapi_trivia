@@ -33,9 +33,9 @@
 .info-container {
   color: $primary-accent-color;
   font-family: $small-text-font;
-  max-height: 100%;
   padding-top: 0.5%;
   text-align: right;
+  margin-right: -80px;
 }
 
 .welcome-message {
