@@ -36,7 +36,8 @@ class App extends Component {
               id: movie.episode_id,
               title: movie.title.toUpperCase(),
               date: date,
-              characters: movie.characters
+              characters: movie.characters,
+              type: 'movie'
             })
           })
         return movies.sort((a,b) => a.id - b.id)
