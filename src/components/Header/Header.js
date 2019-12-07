@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './Header.scss';
 
 const Header = ({name, quote, ranking, logout}) => {
@@ -15,6 +16,13 @@ const Header = ({name, quote, ranking, logout}) => {
       </div>
     </header>
   )
+}
+
+Header.PropTypes = {
+  name: PropTypes.string,
+  quote: PropTypes.string,
+  ranking: PropTypes.string,
+  logout: PropTypes.func
 }
 
 export default Header;
