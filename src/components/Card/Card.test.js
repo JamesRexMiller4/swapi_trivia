@@ -28,13 +28,12 @@ describe('Card', () => {
         date={'1977'}
         characters={charactersArr}
         />)
-    })
+    });
 
     it('should match the snapshot with all the data passed through', () => {
       expect(wrapper).toMatchSnapshot()
-  })
+  });
 
 
-  })
- 
-})
+  });
+});
