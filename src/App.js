@@ -4,7 +4,8 @@ import './App.css';
 import Container from './components/Container/Container.js';
 import Header from './components/Header/Header.js';
 import Landing from './components/Landing/Landing.js';
-import Loader from './components/Loader/Loader.js'
+import Loader from './components/Loader/Loader.js';
+
 
 class App extends Component {
   constructor() {
@@ -17,7 +18,8 @@ class App extends Component {
         quote: '',
         ranking: ''
       },
-      movies: []
+      movies: [],
+      characters: []
     }
   }
 
@@ -55,7 +57,8 @@ class App extends Component {
 
   render = () => {
     let moviePage;
-    !this.state.movies ? moviePage = <Loader /> :
+    let characterPage;
+    !this.state.movies.length ? moviePage = <Loader /> :
     moviePage = <>
       <Header
         logout={this.logout}
@@ -64,12 +67,21 @@ class App extends Component {
         ranking={this.state.user.ranking} />
       <Container movies={this.state.movies} />
      </>
+     !this.state.characters.length ? characterPage = <Loader /> :
+     characterPage = <>
+       <Header
+         logout={this.logout}
+         name={this.state.user.name}
+         quote={this.state.user.quote}
+         ranking={this.state.user.ranking} />
+       <Container movies={this.state.characters} />
+      </>
     return (
       <div className="App">
         <Redirect to={this.state.path} />
         <Route exact path='/' render={() => <Landing updateLogin={this.updateLogin} />} />
         <Route exact path='/movies' render={() => moviePage} />
-        <Route path='/movies/:movie_id' render={() => <Container />} />
+        <Route exact path='/movies/:movie_id' render={() => characterPage} />
         <Route path='/favorite' render={() => <Container />} />
       </div>
     );

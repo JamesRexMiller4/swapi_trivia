@@ -1,6 +1,7 @@
 import React from 'react';
 import './Card.scss';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 const Card = (props) => {
 // For character cards the props being spread out and passed down will need to be grabbed
@@ -16,7 +17,9 @@ const Card = (props) => {
               <li><strong className="episode-title">Episode {props.id}:</strong> {props.title}</li>
               <li><strong>Release Year:</strong> {props.date}</li>
             </ul>
-            <button className="character-btn">View Characters</button>
+            <Link to={`/movies/${props.id}`} key={props.id}>
+              <button className="character-btn">View Characters</button>
+            </Link>
           </div>
         </section>
     )
