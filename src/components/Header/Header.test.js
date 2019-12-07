@@ -7,12 +7,6 @@ describe('Header', () => {
   let wrapper, mockLogOut, user;
 
   beforeEach(() => {
-    // user = {
-    //   name: 'Leeroy Jenkings', 
-    //   quote: "LEEERRRROOOOYYY JEEEENNNNKKKKIIINNNSSS",
-    //   ranking: 'expert'
-    // }
-
     mockLogOut = jest.fn()
 
     wrapper = shallow(<Header 
