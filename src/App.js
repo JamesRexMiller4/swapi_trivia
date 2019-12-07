@@ -11,7 +11,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      isLoading: false,
+      isLoading: true,
       path: '/',
       user: {
         name: '',
@@ -19,7 +19,7 @@ class App extends Component {
         ranking: ''
       },
       movies: [],
-      characters: []
+      characters: ['Luke']
     }
   }
 
@@ -37,20 +37,29 @@ class App extends Component {
               title: movie.title.toUpperCase(),
               date: date,
               characters: movie.characters,
+              openingCrawl: movie.opening_crawl,
               type: 'movie'
             })
           })
+          console.log(movies)
         return movies.sort((a,b) => a.id - b.id)
       })
-      .then(movies => this.setState({movies}))
+      .then(movies => this.setState({isLoading: false, movies: movies}))
       .catch(error => console.log(error))
   }
 
-  async grabCharacters = (id) => {
-    let index = id--;
-    let urls = this.state.movies[index].slice(0, 10);
-    let characters;
-    
+  componentDidUpdate(prevState) {
+    if (this.state.characters.length > 2 && this.state !== prevState) {
+      const fetchChars = this.state.movies.characters.map(character => {
+        return fetch(character)
+          .then(res => res.json())
+          .then(data => {
+            console.log(data)
+          })
+      })
+      Promise.all(fetchChars)
+        .then(data => console.log(data))
+    }
   }
 
   updateLogin = ({ name, quote, ranking }) => {
@@ -62,25 +71,19 @@ class App extends Component {
     this.setState({path: '/'});
   }
 
+
+
   render = () => {
     let moviePage;
     let characterPage;
-    !this.state.movies.length ? moviePage = <Loader /> :
+    this.state.isLoading ? moviePage = <Loader /> :
     moviePage = <>
-      <Header
-        logout={this.logout}
-        name={this.state.user.name}
-        quote={this.state.user.quote}
-        ranking={this.state.user.ranking} />
+      <Header {...this.state.user} />
       <Container movies={this.state.movies} />
      </>
      !this.state.characters.length ? characterPage = <Loader /> :
      characterPage = <>
-       <Header
-         logout={this.logout}
-         name={this.state.user.name}
-         quote={this.state.user.quote}
-         ranking={this.state.user.ranking} />
+       <Header {...this.state.user} />
        <Container movies={this.state.characters} />
       </>
     return (
