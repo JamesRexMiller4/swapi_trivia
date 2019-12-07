@@ -73,9 +73,11 @@ button {
   width: 35%;
 }
 
-button:active {
+button:hover {
   background-color: $main-header-color;
   color: $main-background-color;
+  border: 2px solid;
+  border-color: $main-background-color;
 }
 
 .error-p {
