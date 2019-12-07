@@ -11,16 +11,17 @@ class App extends Component {
     super();
     this.state = {
       isLoading: false,
+      path: '/',
       user : {
-        name: 'Jimbo',
-        quote: "There's a rattlesnake in my boot",
-        ranking: "Expert"
+        name: '',
+        quote: '',
+        ranking: ''
       }
     }
   }
 
   componentDidMount() {
-    this.state.user && 
+    this.state.user &&
     fetch('https://swapi.co/api/films/')
       .then(res => res.json())
       .then(data => {
@@ -40,26 +41,34 @@ class App extends Component {
       .then(movies => this.setState({movies}))
       .catch(error => console.log(error))
   }
-  
+
 
   updateLogin = ({ name, quote, ranking }) => {
-    this.setState({ user: { name, quote, ranking }});
+    this.setState({ user: { name, quote, ranking },
+    path: '/movies'});
   }
 
+  logout = () => {
+    this.setState({path: '/'});
+  }
 
   render = () => {
+    let moviePage;
+    !this.state.movies ? moviePage = <Loader /> :
+    moviePage = <>
+      <Header
+      logout={this.logout}
+      name={this.state.user.name}
+      quote={this.state.user.quote}
+      ranking={this.state.user.ranking} />
+      <Container movies={this.state.movies} />
+     </>
     return (
       <div className="App">
-        <Route exact path='/' render={() => !this.state ? 
-        <Loader /> : <Landing updateLogin={this.updateLogin} />} />
-        <Route path='/movies' render={() => 
-        <Header 
-          name={this.state.user.name} 
-          quote={this.state.user.quote}
-          ranking={this.state.user.ranking}/>} 
-        />
-        <Route exact path='/movies' render={() => !this.state.movies ? 
-        <Loader /> : <Container movies={this.state.movies} />} />
+        <Redirect to={this.state.path} />
+        <Route exact path='/' render={() => <Landing updateLogin={this.updateLogin} />} />
+        <Route exact path='/movies' render={() =>
+          moviePage} />
         <Route path='/movies/:movie_id' render={() => <Container />} />
         <Route path='/favorite' render={() => <Container />} />
       </div>

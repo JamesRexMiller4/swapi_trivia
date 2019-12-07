@@ -1,13 +1,26 @@
 @import '../variables.scss';
 
 .container-section {
+  background: {
+    attachment: fixed;
+    image: url('../../images/star-wars-background.jpg');
+    repeat: no-repeat;
+    size: cover;
+  }
+  height: 100vh;
+  overflow-x: scroll;
+
   width: 100%;
-  height: fit-content;
-  background-image: url('../../images/star-wars-background.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
+}
+
+.grid-container {
+  display: grid;
+  grid-column-gap: 70px;
+  grid-row-gap: 20px;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin: {
+    left: auto;
+    right: auto;
+  }
+  width: 90%;
 }

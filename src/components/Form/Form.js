@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
 import './Form.scss';
 
 class Form extends Component {
@@ -23,16 +24,21 @@ class Form extends Component {
     this.setState({ranking: 'intermediate'})
     : event.target.getAttribute('id') === 'expert-input' ?
     this.setState({ranking: 'expert'}) : console.log(null)
+    setTimeout(() => {this.checkErrorStatus()}, 100)
   }
 
   validateForm = event => {
     event.preventDefault();
-    console.log('Hello');
     (event.target.getAttribute('id') === 'form-submit')
     && this.state.name.length > 0 && this.state.quote.length > 0
     && this.state.ranking.length > 0 ?
     this.props.updateLogin(this.state)
     : this.setState({className: 'error-p'})
+  }
+
+  checkErrorStatus = () => {
+    this.state.name.length > 0 && this.state.quote.length > 0 && this.state.ranking.length > 0 ?
+    this.setState({className: 'hidden'}) : console.log(null);
   }
 
   render() {
