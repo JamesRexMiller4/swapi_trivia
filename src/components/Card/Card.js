@@ -39,7 +39,6 @@ const Card = (props) => {
 // )
 
 Card.propTypes = {
-  key: PropTypes.number,
   id: PropTypes.number,
   title: PropTypes.string,
   date: PropTypes.string,
