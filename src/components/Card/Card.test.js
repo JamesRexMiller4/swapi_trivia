@@ -23,13 +23,16 @@ describe('Card', () => {
       ]
 
       wrapper = shallow(<Card 
-        key={4}
         id={4}
         title={'A NEW HOPE'}
         date={'1977'}
         characters={charactersArr}
         />)
     })
+
+    it('should match the snapshot with all the data passed through', () => {
+      expect(wrapper).toMatchSnapshot()
+  })
 
 
   })
