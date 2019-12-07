@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Loader should match the snapshot with all the data passed through 1`] = `
+<section
+  className="loader-section"
+>
+  <h2
+    className="loader-h2"
+  >
+    A long time ago in a galaxy far far away
+    <div
+      className="loader-div-wave"
+    >
+      <span
+        className="dot"
+      />
+      <span
+        className="dot"
+      />
+      <span
+        className="dot"
+      />
+    </div>
+  </h2>
+</section>
+`;

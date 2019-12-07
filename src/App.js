@@ -12,11 +12,12 @@ class App extends Component {
     this.state = {
       isLoading: false,
       path: '/',
-      user : {
+      user: {
         name: '',
         quote: '',
         ranking: ''
-      }
+      },
+      movies: []
     }
   }
 
@@ -31,7 +32,7 @@ class App extends Component {
             return ({
               key: index,
               id: movie.episode_id,
-              title: movie.title,
+              title: movie.title.toUpperCase(),
               date: date,
               characters: movie.characters
             })
@@ -57,18 +58,17 @@ class App extends Component {
     !this.state.movies ? moviePage = <Loader /> :
     moviePage = <>
       <Header
-      logout={this.logout}
-      name={this.state.user.name}
-      quote={this.state.user.quote}
-      ranking={this.state.user.ranking} />
+        logout={this.logout}
+        name={this.state.user.name}
+        quote={this.state.user.quote}
+        ranking={this.state.user.ranking} />
       <Container movies={this.state.movies} />
      </>
     return (
       <div className="App">
         <Redirect to={this.state.path} />
         <Route exact path='/' render={() => <Landing updateLogin={this.updateLogin} />} />
-        <Route exact path='/movies' render={() =>
-          moviePage} />
+        <Route exact path='/movies' render={() => moviePage} />
         <Route path='/movies/:movie_id' render={() => <Container />} />
         <Route path='/favorite' render={() => <Container />} />
       </div>

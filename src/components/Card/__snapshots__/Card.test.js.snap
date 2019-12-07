@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card Movie Card should match the snapshot with all the data passed through 1`] = `
+<section
+  className="section-card"
+>
+  <div
+    className="wrapper-card-div"
+  >
+    <ul
+      className="card-details-ul"
+    >
+      <li>
+        <strong
+          className="episode-title"
+        >
+          Episode 
+          4
+          :
+        </strong>
+         
+        A NEW HOPE
+      </li>
+      <li>
+        <strong>
+          Release Year:
+        </strong>
+         
+        1977
+      </li>
+    </ul>
+    <button
+      className="character-btn"
+    >
+      View Characters
+    </button>
+  </div>
+</section>
+`;

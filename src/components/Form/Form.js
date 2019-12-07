@@ -43,7 +43,7 @@ class Form extends Component {
 
   render() {
     return (
-      <div id="form-wrapper">
+      <form id="form-wrapper" autoComplete="off">
         <span>Please sign in to continue.</span>
         <div className="input-wrapper">
           <label>Name:</label>
@@ -57,22 +57,22 @@ class Form extends Component {
           <label id="button-main-label">Knowledge Ranking:</label>
           <div id="radio-wrapper">
             <div className="radio-wrapper-sm">
-              <input className="radio-input" type="radio" name="Novice" id="novice-input" onClick={event => this.handleChange(event)}></input>
+              <input className="radio-input" type="radio" name="ranking" id="novice-input" onClick={event => this.handleChange(event)}></input>
               <label className="radio-label" htmlFor="novice-input">Novice</label>
             </div>
             <div className="radio-wrapper-sm">
-              <input className="radio-input" type="radio" name="Intermediate" id="intermediate-input" onClick={event => this.handleChange(event)}></input>
+              <input className="radio-input" type="radio" name="ranking" id="intermediate-input" onClick={event => this.handleChange(event)}></input>
               <label className="radio-label" htmlFor="intermediate-input">Intermediate</label>
             </div>
             <div className="radio-wrapper-sm">
-              <input className="radio-input" type="radio" name="Expert" id="expert-input" onClick={event => this.handleChange(event)}></input>
+              <input className="radio-input" type="radio" name="ranking" id="expert-input" onClick={event => this.handleChange(event)}></input>
               <label className="radio-label" htmlFor="expert-input">Expert</label>
             </div>
           </div>
         </div>
         <p className={this.state.className}>Please fill out all form fields</p>
         <button id="form-submit" onClick={event => this.validateForm(event)}>Sign In</button>
-      </div>
+      </form>
     )
   }
 }

@@ -2,12 +2,11 @@
 
 .container-section {
   background: {
-    attachment: fixed;
     image: url('../../images/star-wars-background.jpg');
     repeat: no-repeat;
     size: cover;
   }
-  height: 100vh;
+  height: 80vh;
   overflow-x: scroll;
 
   width: 100%;
