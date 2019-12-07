@@ -46,6 +46,12 @@ class App extends Component {
       .catch(error => console.log(error))
   }
 
+  async grabCharacters = (id) => {
+    let index = id--;
+    let urls = this.state.movies[index].slice(0, 10);
+    let characters;
+    
+  }
 
   updateLogin = ({ name, quote, ranking }) => {
     this.setState({ user: { name, quote, ranking },
