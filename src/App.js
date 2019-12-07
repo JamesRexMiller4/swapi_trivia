@@ -36,7 +36,7 @@ class App extends Component {
               characters: movie.characters
             })
           })
-        return movies
+        return movies.sort((a,b) => a.id - b.id)
       })
       .then(movies => this.setState({movies}))
       .catch(error => console.log(error))
