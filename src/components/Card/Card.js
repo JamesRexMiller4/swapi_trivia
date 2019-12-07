@@ -1,10 +1,8 @@
 import React from 'react';
 import './Card.scss';
+import PropTypes from 'prop-types';
 
 const Card = (props) => {
-// For movie cards the props being passed down will be
-
-
 // For character cards the props being spread out and passed down will need to be grabbed
 // as {id, name, homeworld, species}
 
@@ -15,7 +13,7 @@ const Card = (props) => {
       <section className="section-card">
           <div className="wrapper-card-div">
             <ul className="card-details-ul">
-              <li><strong className="episode-title">Episode {props.id}:</strong> {props.title.toUpperCase()}</li>
+              <li><strong className="episode-title">Episode {props.id}:</strong> {props.title}</li>
               <li><strong>Release Year:</strong> {props.date}</li>
             </ul>
             <button className="character-btn">View Characters</button>
@@ -39,5 +37,15 @@ const Card = (props) => {
 //   </div>
 // </section>
 // )
+
+Card.propTypes = {
+  key: PropTypes.number,
+  id: PropTypes.number,
+  title: PropTypes.string,
+  date: PropTypes.string,
+  characters: PropTypes.array
+}
+
+
 
 export default Card

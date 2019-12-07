@@ -12,11 +12,12 @@ class App extends Component {
     this.state = {
       isLoading: false,
       path: '/',
-      user : {
+      user: {
         name: '',
         quote: '',
         ranking: ''
-      }
+      },
+      movies: []
     }
   }
 
@@ -31,7 +32,7 @@ class App extends Component {
             return ({
               key: index,
               id: movie.episode_id,
-              title: movie.title,
+              title: movie.title.toUpperCase(),
               date: date,
               characters: movie.characters
             })
@@ -57,10 +58,10 @@ class App extends Component {
     !this.state.movies ? moviePage = <Loader /> :
     moviePage = <>
       <Header
-      logout={this.logout}
-      name={this.state.user.name}
-      quote={this.state.user.quote}
-      ranking={this.state.user.ranking} />
+        logout={this.logout}
+        name={this.state.user.name}
+        quote={this.state.user.quote}
+        ranking={this.state.user.ranking} />
       <Container movies={this.state.movies} />
      </>
     return (
