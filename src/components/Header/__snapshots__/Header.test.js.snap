@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header should match the snapshot with all the data passed through 1`] = `
+<header
+  className="header"
+>
+  <div
+    className="logo-container"
+  >
+    <h1
+      className="logo-h1-header"
+    >
+      Swapi WarS
+    </h1>
+    <h3
+      className="quote-h3-header"
+    >
+      "
+      LEEERRRROOOOYYY JEEEENNNNKKKKIIINNNSSS
+      "
+    </h3>
+  </div>
+  <div
+    className="info-container"
+  >
+    <h2
+      className="welcome-message"
+    >
+      Welcome, 
+      Leeroy Jenkings
+      !
+    </h2>
+    <h3
+      className="ranking-h3-header"
+    >
+      Ranking: 
+      <span
+        className="ranking"
+      >
+        expert
+      </span>
+    </h3>
+    <button
+      className="logout-button-header"
+      id="logout-btn"
+      onClick={[MockFunction]}
+    >
+      Log Out
+    </button>
+  </div>
+</header>
+`;
