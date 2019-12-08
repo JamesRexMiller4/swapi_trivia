@@ -20,7 +20,8 @@ class App extends Component {
       },
       movies: [],
       movieID: null,
-      characters: []
+      characters: [],
+      favoriteChars: []
     }
   }
 
@@ -101,7 +102,10 @@ class App extends Component {
     this.setState({path: url, isLoading: true, movieID: e.target.id})
   }
 
-
+  addFavorite = (event) => {
+    let char = event.target.getAttribute('id');
+    console.log(char);
+  }
 
   render = () => {
     let moviePage;
@@ -114,7 +118,7 @@ class App extends Component {
      !this.state.characters.length ? characterPage = <Loader /> :
      characterPage = <>
        <Header {...this.state.user} logout={this.logout} />
-       <Container data={this.state.characters} setPath={this.setPath}/>
+       <Container data={this.state.characters} setPath={this.setPath} favorite={this.addFavorite}/>
       </>
     return (
       <div className="App">

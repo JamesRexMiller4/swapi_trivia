@@ -28,7 +28,7 @@ const Card = (props) => {
     card =
       <div className="wrapper-card-div">
         <ul className="card-details-ul char-list">
-          <div className='heart'></div>
+          <div id={props[0].name} onClick={event => props.favorite(event)} className='heart'></div>
           <li><strong className="character-name">Name:</strong>{props[0].name}</li>
           <li><strong className="character-detail">Homeworld:</strong>{props[0].homeworld}</li>
           <li><strong className="character-detail">Population of Tatootine:</strong>{props[0].population}</li>

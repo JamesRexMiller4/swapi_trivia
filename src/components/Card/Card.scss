@@ -60,6 +60,10 @@ strong {
   }
   width: 40px;
 }
+
+.heart-2 {
+  background-image: url('../../images/heart-solid.svg');
+}
 // @mixin imagegrid($qty, $margin) {
 //   width: ((100% - (($qty - 1) * $margin))/ $qty);
 //   &:nth-child(n) {
