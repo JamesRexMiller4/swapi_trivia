@@ -1,5 +1,68 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Container should match the snapshot with all the character data passed through 1`] = `
+<section
+  className="container-section"
+>
+  <div
+    className="grid-container"
+  >
+    <Card
+      0={
+        Array [
+          Object {
+            "homeworld": "Tatooine",
+            "name": "Luke",
+            "population": "200000",
+          },
+        ]
+      }
+      1={
+        Array [
+          Object {
+            "species": "human",
+          },
+        ]
+      }
+      2={
+        Array [
+          "THE EMPIRE STRIKES BACK",
+          "REVENGE OF THE SITH",
+          "RETURN OF THE JEDI",
+        ]
+      }
+      key="0"
+    />
+    <Card
+      0={
+        Array [
+          Object {
+            "homeworld": "Tatooine",
+            "name": "Vadar",
+            "population": "200000",
+          },
+        ]
+      }
+      1={
+        Array [
+          Object {
+            "species": "human",
+          },
+        ]
+      }
+      2={
+        Array [
+          "THE EMPIRE STRIKES BACK",
+          "REVENGE OF THE SITH",
+          "RETURN OF THE JEDI",
+        ]
+      }
+      key="1"
+    />
+  </div>
+</section>
+`;
+
 exports[`Container should match the snapshot with all the movie data passed through 1`] = `
 <section
   className="container-section"

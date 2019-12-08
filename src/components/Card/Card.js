@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 const Card = (props) => {
-
   let movieList;
  if (props.type !== 'movie') {
     movieList = props[2].map((movie, index) => {

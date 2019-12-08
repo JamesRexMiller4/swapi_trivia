@@ -20,6 +20,21 @@ describe('Container', () => {
     wrapper = shallow(<Container data= {data} />)
 
     expect(wrapper).toMatchSnapshot()
-  })
+  });
+
+  it('should match the snapshot with all the character data passed through', () => {
+
+    let entry1 = [[{name: 'Luke', homeworld: 'Tatooine', population: '200000'}],[{species: 'human'}],
+    ['THE EMPIRE STRIKES BACK', 'REVENGE OF THE SITH', 'RETURN OF THE JEDI']]
+
+    let entry2 = [[{name: 'Vadar', homeworld: 'Tatooine', population: '200000'}], [{species: 'human'}],
+    ['THE EMPIRE STRIKES BACK', 'REVENGE OF THE SITH', 'RETURN OF THE JEDI']]
+
+    data = [entry1, entry2]
+
+    wrapper = shallow(<Container data= {data} />)
+
+    expect(wrapper).toMatchSnapshot()
+  });
 
 });
