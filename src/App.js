@@ -103,10 +103,13 @@ class App extends Component {
   }
 
   addFavorite = (event) => {
-    let char = event.target.getAttribute('id');
+    let charName = event.target.getAttribute('id');
     event.target.setAttribute('class', 'heart-2');
-    let charDetails = this.state.characters.find(char => char[0].name == char);
-    this.setState({favoriteChars: charDetails})
+    let charDetails = this.state.characters.find(char => {
+      return char[0].name === charName;
+    });
+    let newFavs = [...this.state.favoriteChars, charDetails]
+    this.setState({favoriteChars: newFavs});
   }
 
   render = () => {
