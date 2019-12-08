@@ -11,9 +11,9 @@ const Card = (props) => {
     return <li key={index}>{movie}</li>
       })
  }
-   
+
     let card;
-    props.type === 'movie' ? 
+    props.type === 'movie' ?
     card =
       <div className="wrapper-card-div">
         <ul className="card-details-ul">
@@ -23,11 +23,12 @@ const Card = (props) => {
         <Link to={`/movies/${props.id}`} key={props.id}>
           <button className="character-btn" id={props.id} onClick={props.setPath}>View Characters</button>
         </Link>
-      </div> 
+      </div>
       :
     card =
       <div className="wrapper-card-div">
-        <ul className="card-details-ul">
+        <ul className="card-details-ul char-list">
+          <div className='heart'></div>
           <li><strong className="character-name">Name:</strong>{props[0].name}</li>
           <li><strong className="character-detail">Homeworld:</strong>{props[0].homeworld}</li>
           <li><strong className="character-detail">Population of Tatootine:</strong>{props[0].population}</li>
