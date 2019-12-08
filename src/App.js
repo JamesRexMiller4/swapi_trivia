@@ -20,7 +20,8 @@ class App extends Component {
       },
       movies: [],
       movieID: null,
-      characters: []
+      characters: [],
+      favoriteChars: []
     }
   }
 
@@ -101,7 +102,29 @@ class App extends Component {
     this.setState({path: url, isLoading: true, movieID: e.target.id})
   }
 
+  addFavorite = (event) => {
+    let charName = event.target.getAttribute('id');
+    event.target.setAttribute('class', 'heart-2');
+    let charDetails = this.state.characters.find(char => {
+      return char[0].name === charName;
+    });
+    let newFavs = [...this.state.favoriteChars, charDetails]
+    this.setState({favoriteChars: newFavs});
+  }
 
+  checkFavorite = (event) => {
+    let curClass = event.target.getAttribute('class');
+     curClass === 'heart-2' ? this.removeFavorite(event) : this.addFavorite(event);
+  }
+
+  removeFavorite = (event) => {
+    let charName = event.target.getAttribute('id');
+    event.target.setAttribute('class', 'heart');
+    let newFavs = this.state.favoriteChars.filter(char => {
+      return char[0].name !== charName
+    });
+    this.setState({favoriteChars: newFavs})
+  }
 
   render = () => {
     let moviePage;
@@ -114,7 +137,7 @@ class App extends Component {
      !this.state.characters.length ? characterPage = <Loader /> :
      characterPage = <>
        <Header {...this.state.user} logout={this.logout} />
-       <Container data={this.state.characters} setPath={this.setPath}/>
+       <Container data={this.state.characters} setPath={this.setPath} favorite={this.checkFavorite}/>
       </>
     return (
       <div className="App">
