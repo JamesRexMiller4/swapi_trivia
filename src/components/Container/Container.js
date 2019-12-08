@@ -8,7 +8,7 @@ const Container = (props) => {
 
   if (props.data.type !== 'movie') {
   const tenToDisplay = props.data.slice(0, 10)
-  const cardData = tenToDisplay.map((data, index) => {
+    cardData = tenToDisplay.map((data, index) => {
   return (<Card {...data} setPath={props.setPath} key={index} favorite={props.favorite}/>)
 
   })
@@ -29,7 +29,9 @@ const Container = (props) => {
 }
 
 Container.propTypes = {
-  movies: PropTypes.array
+  data: PropTypes.array,
+  setPath: PropTypes.func, 
+  favorite: PropTypes.func
 }
 
 
