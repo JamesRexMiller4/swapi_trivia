@@ -4,6 +4,7 @@ import Card from '../Card/Card.js'
 import './Container.scss';
 
 const Container = (props) => {
+
   const tenToDisplay = props.data.slice(0, 10)
   const cardData = tenToDisplay.map((data, index) => {
   return (<Card {...data} setPath={props.setPath} key={index}/>)
