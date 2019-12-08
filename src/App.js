@@ -109,12 +109,12 @@ class App extends Component {
     this.state.isLoading ? moviePage = <Loader /> :
     moviePage = <>
       <Header {...this.state.user} logout={this.logout} />
-      <Container movies={this.state.movies} setPath={this.setPath}/>
+      <Container data={this.state.movies} setPath={this.setPath}/>
      </>
      !this.state.characters.length ? characterPage = <Loader /> :
      characterPage = <>
        <Header {...this.state.user} logout={this.logout} />
-       <Container movies={this.state.characters} setPath={this.setPath}/>
+       <Container data={this.state.characters} setPath={this.setPath}/>
       </>
     return (
       <div className="App">

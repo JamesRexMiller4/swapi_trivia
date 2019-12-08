@@ -1,25 +1,25 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Card from '../Card/Card.js'
 import './Container.scss';
 
 const Container = (props) => {
-  // For movie: Container will be passed an array of 7 movies
-
-  // For characters in a movie: Container will be passed an array of character objects,
-  // they will need to have promise alls done to fetch all the necessary data, than have
-  // map methods or a for loop performed to only render 10 cards at a time.
-  console.log(props)
-  const tentoDisplay = props.movies.slice(0, 10)
-  const movieCards = tentoDisplay.map((movie, index) => {
-  return (<Card {...movie} setPath={props.setPath} key={index}/>)
+  const tenToDisplay = props.data.slice(0, 10)
+  const cardData = tenToDisplay.map((data, index) => {
+  return (<Card {...data} setPath={props.setPath} key={index}/>)
   })
+
   return (
     <section className="container-section">
       <div className="grid-container">
-        {movieCards}
+        {cardData}
       </div>
     </section>
   )
+}
+
+Container.propTypes = {
+  movies: PropTypes.array
 }
 
 
