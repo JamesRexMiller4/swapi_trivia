@@ -112,6 +112,20 @@ class App extends Component {
     this.setState({favoriteChars: newFavs});
   }
 
+  checkFavorite = (event) => {
+    let curClass = event.target.getAttribute('class');
+     curClass === 'heart-2' ? this.removeFavorite(event) : this.addFavorite(event);
+  }
+
+  removeFavorite = (event) => {
+    let charName = event.target.getAttribute('id');
+    event.target.setAttribute('class', 'heart');
+    let newFavs = this.state.favoriteChars.filter(char => {
+      return char[0].name !== charName
+    });
+    this.setState({favoriteChars: newFavs})
+  }
+
   render = () => {
     let moviePage;
     let characterPage;
