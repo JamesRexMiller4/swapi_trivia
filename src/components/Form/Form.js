@@ -14,22 +14,22 @@ class Form extends Component {
   }
 
   handleChange = event => {
-    event.target.getAttribute('id') === 'name-input' ?
+    event.target.id === 'name-input' ?
     this.setState({name: event.target.value})
-    : event.target.getAttribute('id') === 'quote-input' ?
+    : event.target.id === 'quote-input' ?
     this.setState({quote: event.target.value})
-    : event.target.getAttribute('id') === 'novice-input' ?
+    : event.target.id === 'novice-input' ?
     this.setState({ranking: 'novice'})
-    : event.target.getAttribute('id') === 'intermediate-input' ?
+    : event.target.id === 'intermediate-input' ?
     this.setState({ranking: 'intermediate'})
-    : event.target.getAttribute('id') === 'expert-input' ?
+    : event.target.id === 'expert-input' ?
     this.setState({ranking: 'expert'}) : console.log(null)
     setTimeout(() => {this.checkErrorStatus()}, 100)
   }
 
   validateForm = event => {
     event.preventDefault();
-    (event.target.getAttribute('id') === 'form-submit')
+    (event.target.id === 'form-submit')
     && this.state.name.length > 0 && this.state.quote.length > 0
     && this.state.ranking.length > 0 ?
     this.props.updateLogin(this.state)
@@ -47,11 +47,11 @@ class Form extends Component {
         <span>Please sign in to continue.</span>
         <div className="input-wrapper">
           <label>Name:</label>
-          <input type="text" id="name-input" onChange={event => this.handleChange(event)}></input>
+          <input type="text" id="name-input" name='name' onChange={event => this.handleChange(event)}></input>
         </div>
         <div className="input-wrapper">
           <label>Favorite Quote:</label>
-          <input type="text" id="quote-input" onChange={event => this.handleChange(event)}></input>
+          <input type="text" id="quote-input" name='quote' onChange={event => this.handleChange(event)}></input>
         </div>
         <div className="input-wrapper">
           <label id="button-main-label">Knowledge Ranking:</label>
