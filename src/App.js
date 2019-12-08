@@ -104,7 +104,9 @@ class App extends Component {
 
   addFavorite = (event) => {
     let char = event.target.getAttribute('id');
-    console.log(char);
+    event.target.setAttribute('class', 'heart-2');
+    let charDetails = this.state.characters.find(char => char[0].name == char);
+    this.setState({favoriteChars: charDetails})
   }
 
   render = () => {

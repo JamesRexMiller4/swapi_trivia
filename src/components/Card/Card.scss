@@ -62,7 +62,20 @@ strong {
 }
 
 .heart-2 {
-  background-image: url('../../images/heart-solid.svg');
+  background: {
+    color: white;
+    image: url('../../images/heart-solid.svg');
+    position: center;
+    repeat: no-repeat;
+    size: 30px;
+  }
+  border-radius: 90%;
+  height: 40px;
+  margin: {
+    left: auto;
+    right: 5%;
+  }
+  width: 40px;
 }
 // @mixin imagegrid($qty, $margin) {
 //   width: ((100% - (($qty - 1) * $margin))/ $qty);
