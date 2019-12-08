@@ -27,7 +27,7 @@ describe('Header', () => {
     expect(wrapper).toMatchSnapshot()
   })
 
-  it('should call updateLogin when a user clicks the login button', () => {
+  it('should call logout when a user clicks the logout button', () => {
     wrapper.find('#logout-btn').simulate('click');
 
     expect(mockLogOut).toHaveBeenCalled();

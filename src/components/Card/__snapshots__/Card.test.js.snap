@@ -29,11 +29,17 @@ exports[`Card Movie Card should match the snapshot with all the data passed thro
         1977
       </li>
     </ul>
-    <button
-      className="character-btn"
+    <Link
+      key="4"
+      to="/movies/4"
     >
-      View Characters
-    </button>
+      <button
+        className="character-btn"
+        id={4}
+      >
+        View Characters
+      </button>
+    </Link>
   </div>
 </section>
 `;

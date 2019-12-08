@@ -5,12 +5,6 @@ import {shallow} from 'enzyme';
 
 describe('Card', () => {
 
-  it('renders without crashing', () => {
-    const div = document.createElement('div');
-    ReactDOM.render(<Card />, div);
-    ReactDOM.unmountComponentAtNode(div);
-  });
-
   describe('Movie Card', () => {
     let wrapper, charactersArr;
 
@@ -27,6 +21,7 @@ describe('Card', () => {
         title={'A NEW HOPE'}
         date={'1977'}
         characters={charactersArr}
+        type="movie"
         />)
     });
 
@@ -34,6 +29,9 @@ describe('Card', () => {
       expect(wrapper).toMatchSnapshot()
   });
 
+  describe('Character Card', () => {
+    
+  })
 
   });
 });
