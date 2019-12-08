@@ -137,7 +137,7 @@ class App extends Component {
      !this.state.characters.length ? characterPage = <Loader /> :
      characterPage = <>
        <Header {...this.state.user} logout={this.logout} />
-       <Container data={this.state.characters} setPath={this.setPath} favorite={this.addFavorite}/>
+       <Container data={this.state.characters} setPath={this.setPath} favorite={this.checkFavorite}/>
       </>
     return (
       <div className="App">
