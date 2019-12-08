@@ -7,8 +7,8 @@ const Card = (props) => {
 
   let movieList;
  if (props.type !== 'movie') {
-    movieList = props[2].map(movie => {
-    return <li>{movie}</li>
+    movieList = props[2].map((movie, index) => {
+    return <li key={index}>{movie}</li>
       })
  }
    
@@ -32,7 +32,7 @@ const Card = (props) => {
           <li><strong className="character-detail">Homeworld:</strong>{props[0].homeworld}</li>
           <li><strong className="character-detail">Population of Tatootine:</strong>{props[0].population}</li>
           <li><strong className="character-detail">Species:</strong>{props[1].species}</li>
-          <li><strong className="character-detail">Other Films:</strong>{movieList}</li>
+          <ul><strong className="character-detail">Other Films:</strong>{movieList}</ul>
         </ul>
       </div>
 
