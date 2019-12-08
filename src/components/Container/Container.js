@@ -10,8 +10,8 @@ const Container = (props) => {
   // map methods or a for loop performed to only render 10 cards at a time.
   console.log(props)
   const tentoDisplay = props.movies.slice(0, 10)
-  const movieCards = tentoDisplay.map((movie) => {
-  return (<Card {...movie} setPath={props.setPath}/>)
+  const movieCards = tentoDisplay.map((movie, index) => {
+  return (<Card {...movie} setPath={props.setPath} key={index}/>)
   })
   return (
     <section className="container-section">
