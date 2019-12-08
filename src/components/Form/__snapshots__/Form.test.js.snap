@@ -1,0 +1,113 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Form should match the snapshot 1`] = `
+<form
+  autoComplete="off"
+  id="form-wrapper"
+>
+  <span>
+    Please sign in to continue.
+  </span>
+  <div
+    className="input-wrapper"
+  >
+    <label>
+      Name:
+    </label>
+    <input
+      id="name-input"
+      name="name"
+      onChange={[Function]}
+      type="text"
+    />
+  </div>
+  <div
+    className="input-wrapper"
+  >
+    <label>
+      Favorite Quote:
+    </label>
+    <input
+      id="quote-input"
+      name="quote"
+      onChange={[Function]}
+      type="text"
+    />
+  </div>
+  <div
+    className="input-wrapper"
+  >
+    <label
+      id="button-main-label"
+    >
+      Knowledge Ranking:
+    </label>
+    <div
+      id="radio-wrapper"
+    >
+      <div
+        className="radio-wrapper-sm"
+      >
+        <input
+          className="radio-input"
+          id="novice-input"
+          name="ranking"
+          onClick={[Function]}
+          type="radio"
+        />
+        <label
+          className="radio-label"
+          htmlFor="novice-input"
+        >
+          Novice
+        </label>
+      </div>
+      <div
+        className="radio-wrapper-sm"
+      >
+        <input
+          className="radio-input"
+          id="intermediate-input"
+          name="ranking"
+          onClick={[Function]}
+          type="radio"
+        />
+        <label
+          className="radio-label"
+          htmlFor="intermediate-input"
+        >
+          Intermediate
+        </label>
+      </div>
+      <div
+        className="radio-wrapper-sm"
+      >
+        <input
+          className="radio-input"
+          id="expert-input"
+          name="ranking"
+          onClick={[Function]}
+          type="radio"
+        />
+        <label
+          className="radio-label"
+          htmlFor="expert-input"
+        >
+          Expert
+        </label>
+      </div>
+    </div>
+  </div>
+  <p
+    className="hidden"
+  >
+    Please fill out all form fields
+  </p>
+  <button
+    id="form-submit"
+    onClick={[Function]}
+  >
+    Sign In
+  </button>
+</form>
+`;
