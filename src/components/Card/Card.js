@@ -10,6 +10,17 @@ const Card = (props) => {
   // homeworld, population of homeworld is a url for another fetch request
   // species is another fetch request
   // films is another fetch request
+  
+  let movieList;
+ if (props.type !== 'movie') {
+    let movies = props[2]
+    console.log(movies[0])
+    movieList = props[2].map(movie => {
+      console.log(movie)
+    return <li>{movie}</li>
+      })
+ }
+   
     let card;
     props.type === 'movie' ? card =
       <div className="wrapper-card-div">
@@ -18,17 +29,17 @@ const Card = (props) => {
           <li><strong>Release Year:</strong> {props.date}</li>
         </ul>
         <Link to={`/movies/${props.id}`} key={props.id}>
-          <button className="character-btn">View Characters</button>
+          <button className="character-btn" id={props.id} onClick={props.setPath}>View Characters</button>
         </Link>
       </div> :
     card =
       <div className="wrapper-card-div">
         <ul className="card-details-ul">
-          <li><strong>Name:</strong> Luke SkyWalker</li>
-          <li><strong>Homeworld:</strong> Tattoiine</li>
-          <li><strong>Population of Tatootine:</strong> 400 million</li>
-          <li><strong>Species:</strong> Human</li>
-          <li><strong>Other Films:</strong> all seven</li>
+          <li><strong className="character-name">Name:</strong>{props[0].name}</li>
+          <li><strong className="character-detail">Homeworld:</strong>{props[0].homeworld}</li>
+          <li><strong className="character-detail">Population of Tatootine:</strong>{props[0].population}</li>
+          <li><strong className="character-detail">Species:</strong>{props[1].species}</li>
+          <li><strong className="character-detail">Other Films:</strong>{movieList}</li>
         </ul>
       </div>
 

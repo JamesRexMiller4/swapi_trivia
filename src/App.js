@@ -19,7 +19,8 @@ class App extends Component {
         ranking: ''
       },
       movies: [],
-      characters: ['Luke']
+      movieID: null,
+      characters: []
     }
   }
 
@@ -49,16 +50,43 @@ class App extends Component {
   }
 
   componentDidUpdate(prevState) {
-    if (this.state.characters.length > 2 && this.state !== prevState) {
-      const fetchChars = this.state.movies.characters.map(character => {
+    if (this.state.characters.length < 1 && this.state.isLoading && this.state !== prevState) {
+      const movie = this.state.movies.find(movie => movie.id === parseInt(this.state.movieID))
+      const fetchChars = movie.characters.map(character => {
         return fetch(character)
           .then(res => res.json())
-          .then(data => {
-            console.log(data)
+          .then(char => {
+      
+            const charHomeData = fetch(char.homeworld)
+              .then(res => res.json())
+              .then(homeworld => {
+                console.log('Resolved')
+                return {name: char.name, homeworld: homeworld.name, population: homeworld.population}
+              })
+              .catch(error => console.log('homeworld fetch failed'))
+
+            const species = fetch(char.species)
+              .then(res => res.json())
+              .then(species => {
+                console.log(species)
+                console.log('resolved')
+                return {species: species.name}
+              })
+              .catch(error => console.log('species fetch failed'))
+
+            const charMovies = char.films.map(film => {
+              return fetch(film)
+              .then(res => res.json())
+              .then(film => film.title)
+              .catch(error => 'films failed')
+            })
+
+            return Promise.all([charHomeData, species, Promise.all(charMovies)])
           })
-      })
+          })
+      // console.log(fetchChars)
       Promise.all(fetchChars)
-        .then(data => console.log(data))
+        .then(characters => this.setState({characters}))
     }
   }
 
@@ -71,6 +99,11 @@ class App extends Component {
     this.setState({path: '/'});
   }
 
+  setPath = (e) => {
+    let url = '/movies/' + e.target.id
+    this.setState({path: url, isLoading: true, movieID: e.target.id})
+  }
+
 
 
   render = () => {
@@ -79,12 +112,12 @@ class App extends Component {
     this.state.isLoading ? moviePage = <Loader /> :
     moviePage = <>
       <Header {...this.state.user} />
-      <Container movies={this.state.movies} />
+      <Container movies={this.state.movies} setPath={this.setPath}/>
      </>
      !this.state.characters.length ? characterPage = <Loader /> :
      characterPage = <>
        <Header {...this.state.user} />
-       <Container movies={this.state.characters} />
+       <Container movies={this.state.characters} setPath={this.setPath}/>
       </>
     return (
       <div className="App">
