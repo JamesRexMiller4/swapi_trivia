@@ -56,7 +56,6 @@ class App extends Component {
         return fetch(character)
           .then(res => res.json())
           .then(char => {
-      
             const charHomeData = fetch(char.homeworld)
               .then(res => res.json())
               .then(homeworld => {
@@ -68,8 +67,6 @@ class App extends Component {
             const species = fetch(char.species)
               .then(res => res.json())
               .then(species => {
-                console.log(species)
-                console.log('resolved')
                 return {species: species.name}
               })
               .catch(error => console.log('species fetch failed'))
@@ -84,9 +81,9 @@ class App extends Component {
             return Promise.all([charHomeData, species, Promise.all(charMovies)])
           })
           })
-      // console.log(fetchChars)
       Promise.all(fetchChars)
         .then(characters => this.setState({characters}))
+        .catch(error => console.log("Something has gone wrong"))
     }
   }
 
@@ -111,12 +108,12 @@ class App extends Component {
     let characterPage;
     this.state.isLoading ? moviePage = <Loader /> :
     moviePage = <>
-      <Header {...this.state.user} />
+      <Header {...this.state.user} logout={this.logout} />
       <Container movies={this.state.movies} setPath={this.setPath}/>
      </>
      !this.state.characters.length ? characterPage = <Loader /> :
      characterPage = <>
-       <Header {...this.state.user} />
+       <Header {...this.state.user} logout={this.logout} />
        <Container movies={this.state.characters} setPath={this.setPath}/>
       </>
     return (
