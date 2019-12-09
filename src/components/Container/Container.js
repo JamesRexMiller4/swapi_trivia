@@ -6,11 +6,10 @@ import './Container.scss';
 const Container = (props) => {
   let cardData;
 
-  if (props.data.type !== 'movie') {
+  if (!props.data.type) {
   const tenToDisplay = props.data.slice(0, 10)
     cardData = tenToDisplay.map((data, index) => {
   return (<Card {...data} setPath={props.setPath} key={index} favorite={props.favorite}/>)
-
   })
 
   } else {
