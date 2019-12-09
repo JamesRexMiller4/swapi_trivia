@@ -114,6 +114,7 @@ class App extends Component {
   }
 
   checkFavorite = (event) => {
+    event.preventDefault();
     let curClass = event.target.getAttribute('class');
      curClass === 'heart-2' ? this.removeFavorite(event) : this.addFavorite(event);
   }
