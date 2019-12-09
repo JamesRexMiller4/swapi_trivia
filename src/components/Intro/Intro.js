@@ -5,10 +5,8 @@ const Intro = (props) => {
   let mov = props.movie();
   return (
     <section className='text-section'>
-      <div className="text-wrap">
-        <h1 className='title'>{mov.title}</h1>
-        <p className='text'>{mov.text}</p>
-      </div>
+      <h1 className='title'>{mov.title}</h1>
+      <p className='text'>{mov.text}</p>
     </section>
   )
 }
