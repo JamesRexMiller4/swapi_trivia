@@ -141,7 +141,8 @@ class App extends Component {
   render = () => {
     let favorites = <>
       <Header {...this.state.user} logout={this.logout} />
-      <Container data={this.state.favoriteChars} setPath={this.setPath} favorite={this.checkFavorite}/>
+      <Container data={this.state.favoriteChars} setPath={this.setPath} favorite={this.checkFavorite}
+      cardType={'heart-2'}/>
      </>
     let moviePage;
     let characterPage;
@@ -153,7 +154,8 @@ class App extends Component {
      !this.state.characters.length ? characterPage = <Intro movie={this.grabMovieIntro}/> :
      characterPage = <>
        <Header {...this.state.user} logout={this.logout} />
-       <Container data={this.state.characters} setPath={this.setPath} favorite={this.checkFavorite}/>
+       <Container data={this.state.characters} setPath={this.setPath} favorite={this.checkFavorite}
+       cardType={'heart'}/>
       </>
     return (
       <div className="App">

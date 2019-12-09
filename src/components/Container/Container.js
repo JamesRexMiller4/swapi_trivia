@@ -6,7 +6,7 @@ import './Container.scss';
 const Container = (props) => {
   const tenToDisplay = props.data.slice(0, 10)
   const cardData = tenToDisplay.map((data, index) => {
-  return (<Card {...data} setPath={props.setPath} key={index} favorite={props.favorite}/>)
+  return (<Card {...data} setPath={props.setPath} key={index} favorite={props.favorite} cardType={props.cardType}/>)
   })
 
   return (
