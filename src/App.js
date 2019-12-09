@@ -103,7 +103,7 @@ class App extends Component {
   }
 
   addFavorite = (event) => {
-    let charName = event.target.getAttribute('id');
+    let charName = event.target.id;
     event.target.setAttribute('class', 'heart-2');
     let charDetails = this.state.characters.find(char => {
       return char[0].name === charName;
@@ -113,12 +113,12 @@ class App extends Component {
   }
 
   checkFavorite = (event) => {
-    let curClass = event.target.getAttribute('class');
+    let curClass = event.target.class;
      curClass === 'heart-2' ? this.removeFavorite(event) : this.addFavorite(event);
   }
 
   removeFavorite = (event) => {
-    let charName = event.target.getAttribute('id');
+    let charName = event.target.id
     event.target.setAttribute('class', 'heart');
     let newFavs = this.state.favoriteChars.filter(char => {
       return char[0].name !== charName
