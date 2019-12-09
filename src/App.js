@@ -5,6 +5,7 @@ import Container from './components/Container/Container.js';
 import Header from './components/Header/Header.js';
 import Landing from './components/Landing/Landing.js';
 import Loader from './components/Loader/Loader.js';
+import Intro from './components/Intro/Intro.js';
 
 
 class App extends Component {
@@ -126,6 +127,17 @@ class App extends Component {
     this.setState({favoriteChars: newFavs})
   }
 
+  grabMovieIntro = () => {
+    let num = this.state.movieID;
+    let mov = this.state.movies.find(mov => {
+      return mov.id === parseInt(num);
+    })
+    return {
+      title: mov.title,
+      text: mov.openingCrawl
+    }
+  }
+
   render = () => {
     let moviePage;
     let characterPage;
@@ -134,7 +146,7 @@ class App extends Component {
       <Header {...this.state.user} logout={this.logout} />
       <Container data={this.state.movies} setPath={this.setPath}/>
      </>
-     !this.state.characters.length ? characterPage = <Loader /> :
+     !this.state.characters.length ? characterPage = <Intro movie={this.grabMovieIntro}/> :
      characterPage = <>
        <Header {...this.state.user} logout={this.logout} />
        <Container data={this.state.characters} setPath={this.setPath} favorite={this.checkFavorite}/>
