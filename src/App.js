@@ -118,7 +118,7 @@ class App extends Component {
   }
 
   checkFavorite = (event) => {
-    let curClass = event.target.class;
+    let curClass = event.target.className;
      curClass === 'heart-2' ? this.removeFavorite(event) : this.addFavorite(event);
   }
 
