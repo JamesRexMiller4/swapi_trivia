@@ -40,24 +40,31 @@
 }
 
 .welcome-message {
-  font-size: 2rem;
+  font-size: 1.6rem;
 }
 
 .ranking-h3-header {
-  font-size: 1.7rem;
+  font-size: 1.2rem;
 }
 
 .ranking {
   display: inline;
-  font-size: 1.4rem;
+  font-size: 1rem;
   margin-left: 1%;
 }
 
-.logout-button-header {
+.button-header {
   background-color: $secondary-background-color;
-  font-family: $small-text-font;
-  height: 30px;
-  margin-top: 2%;
+  display: block;
+  font: {
+    family: $small-text-font;
+    size: 1rem;
+  }
+  height: 25px;
+  margin: {
+    left: auto;
+    top: 2%;
+  }
   outline: none;
   width: 15%;
   &:active {

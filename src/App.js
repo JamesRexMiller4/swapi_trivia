@@ -139,6 +139,10 @@ class App extends Component {
   }
 
   render = () => {
+    let favorites = <>
+      <Header {...this.state.user} logout={this.logout} />
+      <Container data={this.state.favoriteChars} setPath={this.setPath} favorite={this.checkFavorite}/>
+     </>
     let moviePage;
     let characterPage;
     this.state.isLoading ? moviePage = <Loader /> :
@@ -157,7 +161,7 @@ class App extends Component {
         <Route exact path='/' render={() => <Landing updateLogin={this.updateLogin} />} />
         <Route exact path='/movies' render={() => moviePage} />
         <Route exact path='/movies/:movie_id' render={() => characterPage} />
-        <Route path='/favorite' render={() => <Container />} />
+        <Route path='/favorites' render={() => favorites} />
       </div>
     );
   }
