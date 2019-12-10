@@ -100,7 +100,7 @@ class App extends Component {
   }
 
   logout = () => {
-    this.setState({path: '/'});
+    this.setState({path: '/', isLoading: false});
   }
 
   setPath = (e) => {
