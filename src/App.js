@@ -47,7 +47,7 @@ class App extends Component {
         return movies.sort((a,b) => a.id - b.id)
       })
       .then(movies => this.setState({isLoading: false, movies: movies}))
-      .catch(error => console.log(error))
+      .catch(error => console.log('movies fetch failed'))
   }
 
   componentDidUpdate(prevState) {
@@ -63,7 +63,6 @@ class App extends Component {
             const charHomeData = fetch(char.homeworld)
               .then(res => res.json())
               .then(homeworld => {
-                console.log('Resolved')
                 return {name: char.name, homeworld: homeworld.name, population: homeworld.population}
               })
               .catch(error => console.log('homeworld fetch failed'))
