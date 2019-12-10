@@ -1,5 +1,6 @@
 import React from 'react';
 import App from './App';
+import Form from './components/Form/Form'
 import {shallow} from 'enzyme';
 
 describe('App', () => {
@@ -38,12 +39,13 @@ describe('App', () => {
   });
 
   it('should update state when updateLogin is called', () => {
+    const formWrapper = shallow(< Form/>)
     wrapper.instance().componentDidMount = jest.fn();
     wrapper.instance().componentDidUpdate = jest.fn();
     
     expect(wrapper.state()).toEqual(defaultState);
-    wrapper.instance().setState(formState);
-    wrapper.instance().updateLogin(wrapper.state());
+    formWrapper.instance().setState(formState);
+    wrapper.instance().updateLogin(formWrapper.state());
     expect(wrapper.state('user')).toEqual(formState);
   });
 
@@ -124,7 +126,7 @@ describe('App', () => {
   });
 
   it.skip('should test fetch data when component did mount', () => {
-
+    
   });
 
 
