@@ -32,4 +32,5 @@ describe('Header', () => {
 
     expect(mockLogOut).toHaveBeenCalled();
   })
+  
 });
