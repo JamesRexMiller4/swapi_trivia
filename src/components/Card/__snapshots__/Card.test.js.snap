@@ -1,6 +1,75 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Card Movie Card should match the snapshot with all the data passed through 1`] = `
+exports[`Card Character Card should match the snapshot with all the character data passed through 1`] = `
+<section
+  className="section-card"
+>
+  <div
+    className="wrapper-card-div"
+  >
+    <ul
+      className="card-details-ul char-list"
+    >
+      <div
+        className="heart"
+        onClick={[Function]}
+      />
+      <li>
+        <strong
+          className="character-name"
+        >
+          Name:
+        </strong>
+      </li>
+      <li>
+        <strong
+          className="character-detail"
+        >
+          Homeworld:
+        </strong>
+      </li>
+      <li>
+        <strong
+          className="character-detail"
+        >
+          Population of Tatootine:
+        </strong>
+      </li>
+      <li>
+        <strong
+          className="character-detail"
+        >
+          Species:
+        </strong>
+      </li>
+      <ul>
+        <strong
+          className="character-detail"
+        >
+          Other Films:
+        </strong>
+        <li
+          key="0"
+        >
+          A NEW HOPE
+        </li>
+        <li
+          key="1"
+        >
+          RETURN OF THE JEDI
+        </li>
+        <li
+          key="2"
+        >
+          THE FORCE AWAKENS
+        </li>
+      </ul>
+    </ul>
+  </div>
+</section>
+`;
+
+exports[`Card Movie Card should match the snapshot with all the movie data passed through 1`] = `
 <section
   className="section-card"
 >
@@ -36,6 +105,7 @@ exports[`Card Movie Card should match the snapshot with all the data passed thro
       <button
         className="character-btn"
         id={4}
+        onClick={[MockFunction]}
       >
         View Characters
       </button>

@@ -1,0 +1,135 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Container Characters Container should match the snapshot with all the character data passed through 1`] = `
+<section
+  className="container-section"
+>
+  <div
+    className="grid-container"
+  >
+    <Card
+      0={
+        Array [
+          Object {
+            "homeworld": "Tatooine",
+            "name": "Luke",
+            "population": "200000",
+          },
+        ]
+      }
+      1={
+        Array [
+          Object {
+            "species": "human",
+          },
+        ]
+      }
+      2={
+        Array [
+          "THE EMPIRE STRIKES BACK",
+          "REVENGE OF THE SITH",
+          "RETURN OF THE JEDI",
+        ]
+      }
+      key="0"
+    />
+    <Card
+      0={
+        Array [
+          Object {
+            "homeworld": "Tatooine",
+            "name": "Vadar",
+            "population": "200000",
+          },
+        ]
+      }
+      1={
+        Array [
+          Object {
+            "species": "human",
+          },
+        ]
+      }
+      2={
+        Array [
+          "THE EMPIRE STRIKES BACK",
+          "REVENGE OF THE SITH",
+          "RETURN OF THE JEDI",
+        ]
+      }
+      key="1"
+    />
+  </div>
+</section>
+`;
+
+exports[`Container Movies Container should match the snapshot with all the movie data passed through 1`] = `
+<section
+  className="container-section"
+>
+  <div
+    className="grid-container"
+  >
+    <Card
+      characters={
+        Array [
+          "Luke",
+          "RD-D2",
+          "Chewie",
+        ]
+      }
+      date="1977"
+      id={4}
+      key="0"
+      openingCrawl="In the beginning, there was Jack"
+      title="A NEW HOPE"
+      type="movie"
+    />
+    <Card
+      characters={
+        Array [
+          "Han",
+          "Vadar",
+          "C3PO",
+        ]
+      }
+      date="1980"
+      id={5}
+      key="1"
+      openingCrawl="And Jack had a groove"
+      title="THE EMPIRE STRIKES BACK"
+      type="movie"
+    />
+    <Card
+      characters={
+        Array [
+          "Yoda",
+          "RD-D2",
+          "Luke",
+        ]
+      }
+      date="1983"
+      id={6}
+      key="2"
+      openingCrawl="And from this groove, came the groove of all grooves"
+      title="RETURN OF THE JEDI"
+      type="movie"
+    />
+    <Card
+      characters={
+        Array [
+          "B-B8",
+          "Chewi",
+          "Snope",
+        ]
+      }
+      date="2015"
+      id={7}
+      key="3"
+      openingCrawl="And while one day viciously throwing down on his box, Jack boldly declared LET THERE BE HOUSE"
+      title="THE FORCE AWAKENS"
+      type="movie"
+    />
+  </div>
+</section>
+`;

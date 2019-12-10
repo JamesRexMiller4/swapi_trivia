@@ -27,6 +27,7 @@ class App extends Component {
   }
 
   componentDidMount() {
+    // fetch all seven of the star wars movies data
     this.state.user &&
     fetch('https://swapi.co/api/films/')
       .then(res => res.json())
@@ -53,11 +54,14 @@ class App extends Component {
 
   componentDidUpdate(prevState) {
     if (this.state.characters.length < 1 && this.state.isLoading && this.state !== prevState) {
+      // find the selected movie from the array in state
       const movie = this.state.movies.find(movie => movie.id === parseInt(this.state.movieID))
+      // fetch all the characters from the selected movie
       const fetchChars = movie.characters.map(character => {
         return fetch(character)
           .then(res => res.json())
           .then(char => {
+            // fetch all the homeworld and population data for a particular character
             const charHomeData = fetch(char.homeworld)
               .then(res => res.json())
               .then(homeworld => {
@@ -65,14 +69,14 @@ class App extends Component {
                 return {name: char.name, homeworld: homeworld.name, population: homeworld.population}
               })
               .catch(error => console.log('homeworld fetch failed'))
-
+            // fetch all the species data for each particular character
             const species = fetch(char.species)
               .then(res => res.json())
               .then(species => {
                 return {species: species.name}
               })
               .catch(error => console.log('species fetch failed'))
-
+            // fetch all the other movies the particular character appears in 
             const charMovies = char.films.map(film => {
               return fetch(film)
               .then(res => res.json())
@@ -83,6 +87,7 @@ class App extends Component {
             return Promise.all([charHomeData, species, Promise.all(charMovies)])
           })
           })
+      // fetch all the data, and only until everything resolves, setState
       Promise.all(fetchChars)
         .then(characters => this.setState({characters}))
         .catch(error => console.log("Something has gone wrong"))
@@ -104,7 +109,7 @@ class App extends Component {
   }
 
   addFavorite = (event) => {
-    let charName = event.target.getAttribute('id');
+    let charName = event.target.id;
     event.target.setAttribute('class', 'heart-2');
     let charDetails = this.state.characters.find(char => {
       return char[0].name === charName;
@@ -114,12 +119,12 @@ class App extends Component {
   }
 
   checkFavorite = (event) => {
-    let curClass = event.target.getAttribute('class');
+    let curClass = event.target.className;
      curClass === 'heart-2' ? this.removeFavorite(event) : this.addFavorite(event);
   }
 
   removeFavorite = (event) => {
-    let charName = event.target.getAttribute('id');
+    let charName = event.target.id
     event.target.setAttribute('class', 'heart');
     let newFavs = this.state.favoriteChars.filter(char => {
       return char[0].name !== charName
