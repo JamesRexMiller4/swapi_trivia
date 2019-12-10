@@ -6,7 +6,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ### Overview
 
-  Swapi_Trivia uses the SWAPI Star Wars API [https://swapi.co/](https://swapi.co/) to show Star Wars movies and characters along with some facts about each and was built to demonstrate some of the functioanlity and features of React. 
+  Swapi_Trivia uses the [https://swapi.co/](SWAPI Star Wars API) to show Star Wars movies and characters along with some facts about each and was built to demonstrate some of the functioanlity and features of React. 
   
 ### How to use
 
