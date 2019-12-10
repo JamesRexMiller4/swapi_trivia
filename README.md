@@ -12,7 +12,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 Once you have naviagted to the landing page you can sign in with a name, favorite quote, and knowledge level. 
 
-https://user-images.githubusercontent.com/47998896/70556951-1bb5a480-1b3f-11ea-9869-78fec54525bb.png
+<img width="730" alt="Screen Shot 2019-12-10 at 11 20 28 AM" src="https://user-images.githubusercontent.com/47998896/70556951-1bb5a480-1b3f-11ea-9869-78fec54525bb.png">
 
 Upon sign in you will be greeted with a header that includes info on your profile as well as a logout button. You will also see a list of the star wars films. Each movie card will also have a button that allows you to view some of the characters that appear in this movie. 
 
