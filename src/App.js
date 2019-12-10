@@ -141,7 +141,7 @@ class App extends Component {
   render = () => {
     let favorites = <>
       <Header {...this.state.user} logout={this.logout} />
-      <Container data={this.state.favoriteChars} setPath={this.setPath} favorite={this.checkFavorite}
+      <Container data={this.state.favoriteChars} setPath={this.setPath} favorite={this.removeFavorite}
       cardType={'heart-2'}/>
      </>
     let moviePage;
