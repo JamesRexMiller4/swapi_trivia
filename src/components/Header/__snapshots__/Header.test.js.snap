@@ -41,12 +41,23 @@ exports[`Header should match the snapshot with all the data passed through 1`] =
       </span>
     </h3>
     <button
-      className="logout-button-header"
+      className="button-header"
       id="logout-btn"
       onClick={[MockFunction]}
     >
       Log Out
     </button>
+    <Link
+      key="favs"
+      to="/favorites"
+    >
+      <button
+        className="button-header"
+        id="toggle-fav-btn"
+      >
+        View Favs
+      </button>
+    </Link>
   </div>
 </header>
 `;
