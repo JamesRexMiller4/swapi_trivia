@@ -144,6 +144,11 @@ class App extends Component {
   }
 
   render = () => {
+    let favorites = <>
+      <Header {...this.state.user} logout={this.logout} />
+      <Container data={this.state.favoriteChars} setPath={this.setPath} favorite={this.removeFavorite}
+      cardType={'heart-2'}/>
+     </>
     let moviePage;
     let characterPage;
     this.state.isLoading ? moviePage = <Loader /> :
@@ -154,7 +159,8 @@ class App extends Component {
      !this.state.characters.length ? characterPage = <Intro movie={this.grabMovieIntro}/> :
      characterPage = <>
        <Header {...this.state.user} logout={this.logout} />
-       <Container data={this.state.characters} setPath={this.setPath} favorite={this.checkFavorite}/>
+       <Container data={this.state.characters} setPath={this.setPath} favorite={this.checkFavorite}
+       cardType={'heart'}/>
       </>
     return (
       <div className="App">
@@ -162,7 +168,7 @@ class App extends Component {
         <Route exact path='/' render={() => <Landing updateLogin={this.updateLogin} />} />
         <Route exact path='/movies' render={() => moviePage} />
         <Route exact path='/movies/:movie_id' render={() => characterPage} />
-        <Route path='/favorite' render={() => <Container />} />
+        <Route path='/favorites' render={() => favorites} />
       </div>
     );
   }
