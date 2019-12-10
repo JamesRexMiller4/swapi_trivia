@@ -1,5 +1,6 @@
 import React from 'react';
 import './Intro.scss';
+import PropTypes from 'prop-types';
 
 const Intro = (props) => {
   let mov = props.movie();
@@ -9,6 +10,12 @@ const Intro = (props) => {
       <p className='text'>{mov.text}</p>
     </section>
   )
+}
+
+Intro.propTypes = {
+  movie: PropTypes.func,
+  title: PropTypes.string,
+  text: PropTypes.string
 }
 
 export default Intro;
