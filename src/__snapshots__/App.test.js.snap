@@ -23,7 +23,7 @@ exports[`App should match the snapshot 1`] = `
     render={[Function]}
   />
   <Route
-    path="/favorite"
+    path="/favorites"
     render={[Function]}
   />
 </div>

@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import { Route, NavLink, Redirect } from 'react-router-dom';
+import { Route, Redirect } from 'react-router-dom';
 import './App.css';
 import Container from './components/Container/Container.js';
 import Header from './components/Header/Header.js';
 import Landing from './components/Landing/Landing.js';
 import Loader from './components/Loader/Loader.js';
 import Intro from './components/Intro/Intro.js';
+import { getData } from './apiCalls';
 
 
 class App extends Component {
@@ -27,10 +28,8 @@ class App extends Component {
   }
 
   componentDidMount() {
-    // fetch all seven of the star wars movies data
     this.state.user &&
-    fetch('https://swapi.co/api/films/')
-      .then(res => res.json())
+    getData()
       .then(data => {
         let movies = data.results.map((movie, index) => {
           let arr = movie.release_date.split('-')
@@ -45,11 +44,10 @@ class App extends Component {
               type: 'movie'
             })
           })
-          console.log(movies)
         return movies.sort((a,b) => a.id - b.id)
       })
       .then(movies => this.setState({isLoading: false, movies: movies}))
-      .catch(error => console.log(error))
+      .catch(error => console.log('movies fetch failed'))
   }
 
   componentDidUpdate(prevState) {
@@ -65,7 +63,6 @@ class App extends Component {
             const charHomeData = fetch(char.homeworld)
               .then(res => res.json())
               .then(homeworld => {
-                console.log('Resolved')
                 return {name: char.name, homeworld: homeworld.name, population: homeworld.population}
               })
               .catch(error => console.log('homeworld fetch failed'))

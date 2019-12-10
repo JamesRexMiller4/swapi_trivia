@@ -43,7 +43,7 @@ describe('Card', () => {
       mockCheckFavorite = jest.fn();
       filmsArr = ['A NEW HOPE', 'RETURN OF THE JEDI', 'THE FORCE AWAKENS'];
       const data = [[{name: 'Luke', homeworld: 'Tatooine', population: '200000'}], [{species: 'human'}], filmsArr];
-      wrapper = shallow(<Card {...data} favorite={mockCheckFavorite}/>);
+      wrapper = shallow(<Card {...data} favorite={mockCheckFavorite} cardType="heart"/>);
     });
     
     it('should match the snapshot with all the character data passed through', () => {

@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import Header from './Header';
 import {shallow} from 'enzyme';
 
@@ -16,12 +15,6 @@ describe('Header', () => {
       logout={mockLogOut}
     />)
   })
-
-  it('renders without crashing', () => {
-    const div = document.createElement('div');
-    ReactDOM.render(<Header />, div);
-    ReactDOM.unmountComponentAtNode(div);
-  });
 
   it('should match the snapshot with all the data passed through', () => {
     expect(wrapper).toMatchSnapshot()
