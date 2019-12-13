@@ -26,15 +26,8 @@ You can view your favorites by clicking the "View Favs" button in the header. Th
 
 <img width="1434" alt="Screen Shot 2019-12-10 at 11 24 16 AM" src="https://user-images.githubusercontent.com/47998896/70557299-b44c2480-1b3f-11ea-898b-144238b4c98e.png">
 
-### Dev Dependencies 
+### Contributors
 
-1. Enzyme ^3.10.0
-2. enzyme-adapter-react-16 ^1.15.1
-3. node_sass ^4.13.0
-4. prop-types ^15.7.2
-5. react ^16.12.0
-6. react-dom ^16.12.0
-7. react-router-dom ^5.1.2
-8. react-scripts 3.2.0
-9. sass ^1.23.7
-10. typescript ^3.7.3
+- Jim Miller @JamesRexMiller
+- Cameron MacRae @cammac60
+
